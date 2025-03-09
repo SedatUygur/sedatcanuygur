@@ -2,11 +2,17 @@
   "name": "sedatcanuygur",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "check": "prettier . --check",
+    "format": "prettier . --write",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.6",
@@ -29,8 +35,12 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
+    "eslint-config-prettier": "^10.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "postcss": "^8.5.3",
     "postcss-nested": "^7.0.2",
+    "prettier": "3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
