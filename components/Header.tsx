@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-import { ModeToggle } from "@/components/ui/ModeToggle";
+import { ModeToggle } from "@/components/ModeToggle";
 import { SearchBar } from "@/components/ui/SearchBar";
 
 export function Header() {
