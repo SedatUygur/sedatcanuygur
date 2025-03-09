@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 import { BlogCardSkeleton } from "@/components/skeletons/BlogCardSkeleton";
 
 export default function Home() {
@@ -25,21 +23,11 @@ export default function Home() {
               Latest Blog Posts
             </h2>
             <div className="mt-8 space-y-6">
-              <Suspense
-                fallback={
-                  <div className="flex items-center">
-                    <BlogCardSkeleton />
-                    <BlogCardSkeleton />
-                    <BlogCardSkeleton />
-                  </div>
-                }
-              >
-                <div className="flex flex-col items-center space-y-4">
-                  <BlogCardSkeleton />
-                  <BlogCardSkeleton />
-                  <BlogCardSkeleton />
-                </div>
-              </Suspense>
+              <div className="flex flex-col items-center space-y-4">
+                <BlogCardSkeleton />
+                <BlogCardSkeleton />
+                <BlogCardSkeleton />
+              </div>
             </div>
           </div>
         </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ScrollText, User, Video } from "lucide-react";
+import { ScrollText, User } from "lucide-react";
 
 import {
   CommandDialog,
@@ -44,10 +44,6 @@ export function SearchBar() {
             <CommandItem>
               <ScrollText className="mr-2 h-4 w-4" />
               <span>Blog</span>
-            </CommandItem>
-            <CommandItem>
-              <Video className="mr-2 h-4 w-4" />
-              <span>Videos</span>
             </CommandItem>
             <CommandItem>
               <User className="mr-2 h-4 w-4" />
