@@ -1,46 +1,51 @@
-"use server";
+import { type NextRequest, NextResponse } from "next/server";
+import nodemailer, { SentMessageInfo } from "nodemailer";
+import Mail from "nodemailer/lib/mailer";
 
-import { CreateEmailResponseSuccess, ErrorResponse } from "resend";
-import * as zod from "zod";
+export async function POST(request: NextRequest) {
+  const { emailAddress, name, message } = await request.json();
 
-import { ContactEmail } from "@/components/email-templates/ContactEmail";
-import { resend } from "@/lib/resend";
-import { contactSchema } from "@/lib/schemas/ContactFormSchema";
+  const transport = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.MY_EMAIL,
+      pass: process.env.MY_PASSWORD,
+    },
+  });
 
-type ContactSchemaValues = zod.infer<typeof contactSchema>;
+  const mailOptions: Mail.Options = {
+    from: process.env.MY_EMAIL,
+    to: emailAddress,
+    cc: process.env.MY_EMAIL,
+    subject: `Thanks for contacting with me, ${name}`,
+    text: message,
+    html: `<h3>Hello ${name}, your message has been successfully received.</h3>
+        <p>Below you will find a copy of your email:</p>
+        <p><strong>Name: </strong>${name}</p>
+        <p><strong>Email: </strong>${emailAddress}</p>
+        <p><strong>Message: </strong>${message}</p>
+        <p style="color:red;">Please do not reply to this email!</p>`,
+  };
 
-type SendEmailResponse = {
-  data?: CreateEmailResponseSuccess | null;
-  error?: ErrorResponse | zod.ZodFormattedError<ContactSchemaValues>;
-  status?: number;
-};
+  const sendMailPromise = () =>
+    new Promise<string>((resolve, reject) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      transport.sendMail(
+        mailOptions,
+        function (err: Error | null, info: SentMessageInfo) {
+          if (!err) {
+            resolve("Email sent");
+          } else {
+            reject(err.message);
+          }
+        },
+      );
+    });
 
-export async function sendEmail(
-  formData: ContactSchemaValues,
-): Promise<SendEmailResponse> {
-  const parsedFormData = contactSchema.safeParse(formData);
-  if (parsedFormData.success) {
-    const { name, emailAddress, message } = parsedFormData.data;
-    try {
-      const { data, error } = await resend.emails.send({
-        from: process.env.FROM_ADDRESS!,
-        to: [process.env.TO_ADDRESS!],
-        subject: `${name} Contacted You`,
-        react: ContactEmail({ name, emailAddress, message }),
-      });
-
-      if (error) {
-        return { error: error, status: 500 };
-      } else {
-        return { data: data, status: 200 };
-      }
-    } catch (err: unknown) {
-      const error = err as
-        | ErrorResponse
-        | zod.ZodFormattedError<ContactSchemaValues>;
-      return { error: error, status: 500 };
-    }
-  } else {
-    return { error: parsedFormData.error.format(), status: 400 };
+  try {
+    await sendMailPromise();
+    return NextResponse.json({ message: "Email sent", status: 200 });
+  } catch (err) {
+    return NextResponse.json({ error: err, status: 500 });
   }
 }

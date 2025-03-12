@@ -17,10 +17,10 @@ import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
 import { useToast } from "@/components/ui/UseToast";
 
-import { sendEmail } from "@/app/api/email/route";
+import { sendEmail } from "@/lib/send-email";
 import { contactSchema } from "@/lib/schemas/ContactFormSchema";
 
-type ContactSchemaValues = zod.infer<typeof contactSchema>;
+export type ContactSchemaValues = zod.infer<typeof contactSchema>;
 
 export function ContactForm() {
   const { toast } = useToast();
@@ -44,9 +44,9 @@ export function ContactForm() {
     data: ContactSchemaValues,
   ) => {
     const result = await sendEmail(data);
-    if (!result.error) {
+    if (result && result.status === 200) {
       toast({
-        description: "Email sent!",
+        description: result.message,
       });
       reset();
     } else {

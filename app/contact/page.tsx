@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/Button";
-import { Label } from "@/components/ui/Label";
-import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function Component() {
   return (
@@ -13,14 +11,8 @@ export default function Component() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-20">
             <div className="space-y-8 lg:pr-8">
-              {/* <img
-                alt="Contact Image"
-                className="aspect-content rounded-lg object-cover object-center"
-                height="400"
-                src="/me/sunset-headshot.png"
-                width="400"
-              /> */}
               <Image
+                priority
                 alt="Contact Image"
                 className="aspect-content rounded-lg object-cover object-center"
                 height={400}
@@ -29,37 +21,12 @@ export default function Component() {
               />
               <p>
                 Feel free to reach out if you have a comment or question about
-                something I&apos;ve written or recorded, or if you just want to
-                connect.
+                something I have written or if you just want to connect.
               </p>
-              <p>You can also find me on various social sites, linked below.</p>
+              <p>You can also find me on various social sites linked below.</p>
             </div>
             <div className="lg:col-span-2">
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Enter your name" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    placeholder="Enter your email"
-                    type="email"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    className="min-h-[100px]"
-                    id="message"
-                    placeholder="Enter your message"
-                  />
-                </div>
-                <Button disabled type="submit">
-                  Send
-                </Button>
-              </div>
+              <ContactForm />
             </div>
           </div>
           <div className="flex space-x-4">
