@@ -23,6 +23,7 @@ export function Header() {
               </div>
             </Link>
             <Link href="/blog">Blog</Link>
+            <Link href="/contact">Contact</Link>
           </div>
           <div className="container flex flex-row items-start justify-end space-y-2 space-x-4 sm:flex-row sm:items-center sm:space-y-0 md:h-16">
             <SearchBar />
