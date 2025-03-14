@@ -1,6 +1,22 @@
 import { type NextRequest, NextResponse } from "next/server";
-import nodemailer, { SentMessageInfo } from "nodemailer";
+import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
+
+/**
+ * Handles POST requests to send an email using the provided request data.
+ *
+ * This function extracts the `emailAddress`, `name`, and `message` from the request body,
+ * creates a mail transport using Nodemailer configured with Gmail service, and sends an
+ * email with the provided details. The email is sent from the address specified in
+ * the environment variable `MY_EMAIL`.
+ *
+ * If the email is sent successfully, a JSON response with a success message and status
+ * code 200 is returned. If there is an error during the email sending process, a JSON
+ * response with the error message and status code 500 is returned.
+ *
+ * @param request - The incoming HTTP request object containing the email details in JSON format.
+ * @returns A JSON response indicating the success or failure of the email sending operation.
+ */
 
 export async function POST(request: NextRequest) {
   const { emailAddress, name, message } = await request.json();
@@ -29,17 +45,13 @@ export async function POST(request: NextRequest) {
 
   const sendMailPromise = () =>
     new Promise<string>((resolve, reject) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      transport.sendMail(
-        mailOptions,
-        function (err: Error | null, info: SentMessageInfo) {
-          if (!err) {
-            resolve("Email sent");
-          } else {
-            reject(err.message);
-          }
-        },
-      );
+      transport.sendMail(mailOptions, function (err: Error | null) {
+        if (!err) {
+          resolve("Email sent");
+        } else {
+          reject(err.message);
+        }
+      });
     });
 
   try {
