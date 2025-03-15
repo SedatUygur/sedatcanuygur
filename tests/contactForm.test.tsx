@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import { ContactForm } from "@/components/ContactForm";
-import { sendEmail } from "@/lib/SendEmail";
+import { processContactForm } from "@/lib/SendEmail";
 import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
@@ -11,11 +11,13 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-jest.mock("@/lib/SendEmail", () => ({
+/*jest.mock("@/lib/SendEmail", () => ({
   sendEmail: jest.fn(),
-}));
+}));*/
+jest.mock("@/app/api/db/emails");
+jest.mock("@/lib/SendEmail");
 
-describe("ContactForm", () => {
+describe("processContactForm", () => {
   it("submits the form and sends an email", async () => {
     const { getByText, getByLabelText } = render(<ContactForm />);
     const nameInput = getByLabelText("Name");
@@ -38,10 +40,10 @@ describe("ContactForm", () => {
 
     fireEvent.click(submitButton);
 
-    await waitFor(() => expect(sendEmail).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(processContactForm).toHaveBeenCalledTimes(1));
 
-    expect(sendEmail).toHaveBeenCalledWith({
-      name: "John Doe",
+    expect(processContactForm).toHaveBeenCalledWith({
+      fullName: "John Doe",
       emailAddress: "john.doe@example.com",
       message: "Hello, this is a test message.",
     });
@@ -69,10 +71,10 @@ describe("ContactForm", () => {
 
     fireEvent.click(submitButton);
 
-    await waitFor(() => expect(sendEmail).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(processContactForm).toHaveBeenCalledTimes(1));
 
-    expect(sendEmail).toHaveBeenCalledWith({
-      name: "John Doe",
+    expect(processContactForm).toHaveBeenCalledWith({
+      fullName: "John Doe",
       emailAddress: "john.doe@example.com",
       message: "Hello, this is a test message.",
     });

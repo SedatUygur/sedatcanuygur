@@ -48,14 +48,21 @@ export function ContactForm() {
   ) => {
     const contactFormResult = await processContactForm(data);
     //const sendEmailResult = await sendEmail(data);
-    if (!(contactFormResult.emailError || contactFormResult.formErrors)) {
+    if (
+      contactFormResult &&
+      !(contactFormResult.emailError || contactFormResult.formErrors)
+    ) {
       //if (result && result.status === 200) {
       toast({
         description: "Email sent successfully!",
       });
       reset();
     } else {
-      if ("formErrors" in contactFormResult && contactFormResult.formErrors) {
+      if (
+        contactFormResult &&
+        "formErrors" in contactFormResult &&
+        contactFormResult.formErrors
+      ) {
         const keys = Object.keys(contactFormResult.formErrors) as Array<
           keyof typeof contactFormResult.formErrors
         >;
