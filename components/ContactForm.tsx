@@ -3,7 +3,6 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as zod from "zod";
 
 import {
   Form,
@@ -19,9 +18,11 @@ import { Button } from "@/components/ui/Button";
 import { useToast } from "@/components/ui/UseToast";
 
 import { sendEmail } from "@/lib/SendEmail";
-import { contactSchema } from "@/lib/schemas/ContactFormSchema";
-
-export type ContactSchemaValues = zod.infer<typeof contactSchema>;
+//import { processContactForm } from "@/app/actions/contact";
+import {
+  ContactSchemaValues,
+  contactSchema,
+} from "@/lib/schemas/ContactFormSchema";
 
 export function ContactForm() {
   const { toast } = useToast();
@@ -29,7 +30,7 @@ export function ContactForm() {
   const form = useForm<ContactSchemaValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      name: "",
+      fullName: "",
       emailAddress: "",
       message: "",
     },
@@ -38,19 +39,33 @@ export function ContactForm() {
     control,
     handleSubmit,
     reset,
+    setError,
     formState: { isSubmitting },
   } = form;
 
   const onSubmit: SubmitHandler<ContactSchemaValues> = async (
     data: ContactSchemaValues,
   ) => {
+    //const result = await processContactForm(data);
     const result = await sendEmail(data);
+    // if (!(result.emailError || result.formErrors)) {
     if (result && result.status === 200) {
       toast({
         description: result.message,
       });
       reset();
     } else {
+      if ("formErrors" in result && result.formErrors) {
+        const keys = Object.keys(result.formErrors) as Array<
+          keyof typeof result.formErrors
+        >;
+        keys.forEach((key) => {
+          const message = result.formErrors?.[key];
+          if (message) {
+            setError(key, { message: message });
+          }
+        });
+      }
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",
@@ -68,16 +83,16 @@ export function ContactForm() {
       >
         <FormField
           control={control}
-          name="name"
+          name="fullName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="name" aria-required={true}>
+              <FormLabel htmlFor="fullName" aria-required={true}>
                 Name
               </FormLabel>
               <FormControl>
                 <Input
                   required
-                  id="name"
+                  id="fullName"
                   placeholder="Enter your name"
                   {...field}
                 />
