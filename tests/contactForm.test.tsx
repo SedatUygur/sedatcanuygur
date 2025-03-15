@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import { ContactForm } from "@/components/ContactForm";
-import { sendEmail } from "@/lib/send-email";
+import { sendEmail } from "@/lib/SendEmail";
 import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
@@ -11,7 +11,7 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-jest.mock("@/lib/send-email", () => ({
+jest.mock("@/lib/SendEmail", () => ({
   sendEmail: jest.fn(),
 }));
 

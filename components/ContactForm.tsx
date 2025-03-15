@@ -18,7 +18,7 @@ import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
 import { useToast } from "@/components/ui/UseToast";
 
-import { sendEmail } from "@/lib/send-email";
+import { sendEmail } from "@/lib/SendEmail";
 import { contactSchema } from "@/lib/schemas/ContactFormSchema";
 
 export type ContactSchemaValues = zod.infer<typeof contactSchema>;
