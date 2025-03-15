@@ -17,8 +17,8 @@ import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
 import { useToast } from "@/components/ui/UseToast";
 
-import { sendEmail } from "@/lib/SendEmail";
-//import { processContactForm } from "@/app/actions/contact";
+import { processContactForm } from "@/lib/SendEmail";
+
 import {
   ContactSchemaValues,
   contactSchema,
@@ -46,21 +46,21 @@ export function ContactForm() {
   const onSubmit: SubmitHandler<ContactSchemaValues> = async (
     data: ContactSchemaValues,
   ) => {
-    //const result = await processContactForm(data);
-    const result = await sendEmail(data);
-    // if (!(result.emailError || result.formErrors)) {
-    if (result && result.status === 200) {
+    const contactFormResult = await processContactForm(data);
+    //const sendEmailResult = await sendEmail(data);
+    if (!(contactFormResult.emailError || contactFormResult.formErrors)) {
+      //if (result && result.status === 200) {
       toast({
-        description: result.message,
+        description: "Email sent successfully!",
       });
       reset();
     } else {
-      if ("formErrors" in result && result.formErrors) {
-        const keys = Object.keys(result.formErrors) as Array<
-          keyof typeof result.formErrors
+      if ("formErrors" in contactFormResult && contactFormResult.formErrors) {
+        const keys = Object.keys(contactFormResult.formErrors) as Array<
+          keyof typeof contactFormResult.formErrors
         >;
         keys.forEach((key) => {
-          const message = result.formErrors?.[key];
+          const message = contactFormResult.formErrors?.[key];
           if (message) {
             setError(key, { message: message });
           }

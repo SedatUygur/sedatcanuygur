@@ -1,5 +1,14 @@
-import { ContactSchemaValues } from "@/lib/schemas/ContactFormSchema";
+import { insertEmail } from "@/app/api/db/emails";
+import {
+  contactSchema,
+  ContactSchemaValues,
+} from "@/lib/schemas/ContactFormSchema";
 //import { toaster } from '@/src/components/ui/toaster';
+
+type ProcessContactFormResponse = {
+  emailError?: string;
+  formErrors?: Partial<ContactSchemaValues>;
+};
 
 /**
  * Sends an email using the provided contact data.
@@ -30,4 +39,45 @@ export function sendEmail(data: ContactSchemaValues) {
     }
   };
   return getResponse();
+}
+
+export async function processContactForm(
+  formData: ContactSchemaValues,
+): Promise<ProcessContactFormResponse> {
+  const parsedFormData = contactSchema.safeParse(formData);
+  if (parsedFormData.success) {
+    const { fullName, emailAddress, message } = parsedFormData.data;
+
+    const databaseResult = await insertEmail({
+      fullName,
+      emailAddress,
+      message,
+    });
+
+    if (databaseResult.errorMessage || databaseResult.columnErrors) {
+      if (databaseResult.columnErrors) {
+        return { formErrors: databaseResult.columnErrors.formFields };
+      }
+    }
+    const sendEmailResult = await sendEmail({
+      fullName,
+      emailAddress,
+      message,
+    });
+
+    if (sendEmailResult.error) {
+      return { emailError: sendEmailResult.error };
+    }
+
+    return {};
+  } else {
+    const errorMap = parsedFormData.error.flatten().fieldErrors;
+    return {
+      formErrors: {
+        fullName: errorMap["fullName"]?.[0],
+        emailAddress: errorMap["emailAddress"]?.[0],
+        message: errorMap["message"]?.[0],
+      },
+    };
+  }
 }
