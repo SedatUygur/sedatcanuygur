@@ -1,4 +1,4 @@
-import { ContactSchemaValues } from "@/components/ContactForm";
+import { ContactSchemaValues } from "@/lib/schemas/ContactFormSchema";
 //import { toaster } from '@/src/components/ui/toaster';
 
 /**
