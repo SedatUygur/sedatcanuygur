@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { ThemeProvider } from "@/components/ThemeProvider";
+/* import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Toaster } from "@/components/ui/Toaster";
+import { Toaster } from "@/components/ui/Toaster"; */
 
 import "./globals.css";
 
@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <div className="flex flex-col h-screen justify-between px-16 pt-4">
+        {/* <div className="flex flex-col h-screen justify-between px-16 pt-4">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -46,7 +46,8 @@ export default function RootLayout({
             <Toaster />
             <Footer />
           </ThemeProvider>
-        </div>
+        </div> */}
+        {children}
       </body>
     </html>
   );
