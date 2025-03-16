@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <div className="px-16 pt-4">
+        <div className="flex flex-col h-screen justify-between px-16 pt-4">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
