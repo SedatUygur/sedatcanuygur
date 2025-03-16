@@ -6,10 +6,7 @@ function Skeleton({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={wrapClassNames(
-        "animate-pulse rounded-md bg-slate-100 dark:bg-slate-800",
-        className,
-      )}
+      className={wrapClassNames("animate-pulse rounded-md bg-muted", className)}
       {...props}
     />
   );
