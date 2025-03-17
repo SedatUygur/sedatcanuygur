@@ -11,14 +11,14 @@ export default function CvPage() {
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">Sedat Can Uygur</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
+            <p className="text-pretty font-mono text-base text-muted-foreground">
               Senior Software Engineer with over 8 years of experience in full
               stack development and software architecture
             </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+            <p className="max-w-md items-center text-pretty font-mono text-sm text-muted-foreground">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                href="https://www.google.com/maps/place/Portland,+OR"
+                href="https://www.google.com/maps/place/Muğla,+Türkiye"
                 target="_blank"
               >
                 <GlobeIcon className="size-3" />
@@ -36,7 +36,7 @@ export default function CvPage() {
         </div>
         <section className="flex min-h-0 flex-col gap-y-3">
           <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground">
+          <p className="text-pretty font-mono text-base text-muted-foreground">
             Innovative and results-driven Senior Software Engineer with over 8
             years of experience in full‑stack development, software
             architecture. Expert at designing and implementing resilient,
@@ -60,7 +60,7 @@ export default function CvPage() {
                     Freelance
                   </a>
                   <span className="inline-flex gap-x-1">
-                    <Badge variant="secondary" className="align-middle text-xs">
+                    <Badge variant="secondary" className="align-middle text-sm">
                       Remote
                     </Badge>
                   </span>
@@ -75,7 +75,7 @@ export default function CvPage() {
                 </h4>
               </div>
             </CardHeader>
-            <CardContent className="mt-2 text-xs">
+            <CardContent className="mt-2 text-sm">
               <ul>
                 <li>
                   Architect and develop full stack solutions with an emphasis on
@@ -101,7 +101,7 @@ export default function CvPage() {
                     feature/mind
                   </a>
                   <span className="inline-flex gap-x-1">
-                    <Badge variant="secondary" className="align-middle text-xs">
+                    <Badge variant="secondary" className="align-middle text-sm">
                       Remote
                     </Badge>
                   </span>
@@ -114,7 +114,7 @@ export default function CvPage() {
                 Senior Software Engineer
               </h4>
             </CardHeader>
-            <CardContent className="mt-2 text-xs">
+            <CardContent className="mt-2 text-sm">
               <ul>
                 <li>
                   Led design, development and integration of Salesforce-based
@@ -142,7 +142,7 @@ export default function CvPage() {
                     Vodafone
                   </a>
                   <span className="inline-flex gap-x-1">
-                    <Badge variant="secondary" className="align-middle text-xs">
+                    <Badge variant="secondary" className="align-middle text-sm">
                       On-Site & Remote
                     </Badge>
                   </span>
@@ -155,7 +155,7 @@ export default function CvPage() {
                 Senior Software Engineer
               </h4>
             </CardHeader>
-            <CardContent className="mt-2 text-xs">
+            <CardContent className="mt-2 text-sm">
               <ul>
                 <li>
                   Designed and implemented ticket management and web service
@@ -179,7 +179,7 @@ export default function CvPage() {
                     Kuzey Pharma
                   </a>
                   <span className="inline-flex gap-x-1">
-                    <Badge variant="secondary" className="align-middle text-xs">
+                    <Badge variant="secondary" className="align-middle text-sm">
                       On-Site
                     </Badge>
                   </span>
@@ -192,7 +192,7 @@ export default function CvPage() {
                 Software Engineer
               </h4>
             </CardHeader>
-            <CardContent className="mt-2 text-xs">
+            <CardContent className="mt-2 text-sm">
               <ul>
                 <li>
                   Designed and developed an ERP project using Java technologies,
@@ -213,7 +213,7 @@ export default function CvPage() {
                     Kreatif
                   </a>
                   <span className="inline-flex gap-x-1">
-                    <Badge variant="secondary" className="align-middle text-xs">
+                    <Badge variant="secondary" className="align-middle text-sm">
                       On-Site
                     </Badge>
                   </span>
@@ -226,7 +226,7 @@ export default function CvPage() {
                 Software Engineer
               </h4>
             </CardHeader>
-            <CardContent className="mt-2 text-xs">
+            <CardContent className="mt-2 text-sm">
               <ul>
                 <li>
                   Designed and developed e‑commerce websites and plugins using

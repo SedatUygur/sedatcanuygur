@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import "tailwindcss-animate";
 
 const config: Config = {
   content: [
@@ -35,8 +34,6 @@ const config: Config = {
         foreground: "hsl(var(--foreground))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        warning: "hsl(var(--warning))",
-        "warning-foreground": "hsl(var(--warning-foreground))",
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
@@ -65,6 +62,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--fog))",
           foreground: "hsl(var(--fog-foreground))",
         },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
       },
       keyframes: {
         "accordion-down": {
@@ -79,7 +80,8 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
   prefix: "",
 };
 export default config;
