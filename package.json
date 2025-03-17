@@ -7,7 +7,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "check": "prettier . --check",
     "format": "prettier . --write",
