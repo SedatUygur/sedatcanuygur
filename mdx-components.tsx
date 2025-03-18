@@ -1,5 +1,16 @@
 import { Code } from "bright";
 import type { MDXComponents } from "mdx/types";
+import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
+
+Code.theme = {
+  dark: "github-dark",
+  light: "github-light",
+};
+
+export const mdxComponents: MDXComponents = {
+  PublishedOnOldBlog: PublishedOnOldBlog,
+  pre: Code,
+};
 
 /**
  * Overrides the default MDX components with our custom ones.
@@ -8,13 +19,8 @@ import type { MDXComponents } from "mdx/types";
  * @returns {MDXComponents} The overridden MDX components.
  */
 export function useMDXComponents(components: MDXComponents): MDXComponents {
-  Code.theme = {
-    dark: "github-dark",
-    light: "github-light",
-  };
-
   return {
     ...components,
-    pre: Code,
+    ...mdxComponents,
   };
 }
