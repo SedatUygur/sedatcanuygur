@@ -8,9 +8,8 @@ type BlogPostPageParams = {
     slug: string;
   };
 };
-export default async function BlogPost({
-  params: { slug },
-}: BlogPostPageParams) {
+export default async function BlogPost({ params }: BlogPostPageParams) {
+  const { slug } = await params;
   const post = await fetchPost(slug);
 
   if (!post) return notFound();

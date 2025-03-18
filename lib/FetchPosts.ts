@@ -5,7 +5,7 @@ import { cache } from "react";
 import { Post } from "@/lib/types";
 
 export const fetchPosts = cache(async () => {
-  const posts = await fs.readdir("posts/");
+  const posts = await fs.readdir("public/posts/");
 
   return Promise.all(
     posts.map(async (file) => {
