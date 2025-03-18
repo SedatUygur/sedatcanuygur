@@ -1,6 +1,8 @@
-import { BlogCardSkeleton } from "@/components/skeletons/BlogCardSkeleton";
+import { BlogCard } from "@/components/BlogCard";
+import fetchPosts from "@/lib/FetchPosts";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await fetchPosts();
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
@@ -23,11 +25,14 @@ export default function Home() {
               Latest Blog Posts
             </h2>
             <div className="mt-8 space-y-6">
-              <div className="flex flex-col items-center space-y-4">
+              {/* <div className="flex flex-col items-center space-y-4">
                 <BlogCardSkeleton />
                 <BlogCardSkeleton />
                 <BlogCardSkeleton />
-              </div>
+              </div> */}
+              {posts.slice(0, 5).map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
             </div>
           </div>
         </section>
