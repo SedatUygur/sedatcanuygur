@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 
 import { fetchPost } from "@/lib/FetchPosts";
 
@@ -18,5 +18,9 @@ export default async function BlogPost({ params }: BlogPostPageParams) {
     () => import(`@/public/posts/${post.date}-${post.slug}.mdx`),
   );
 
-  return <MdxComponent />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MdxComponent />
+    </Suspense>
+  );
 }
