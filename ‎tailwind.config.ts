@@ -38,13 +38,37 @@ const config: Config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        bright: {
+          DEFAULT: "hsl(var(--bright))",
+          foreground: "hsl(var(--bright-foreground))",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cloud: {
+          DEFAULT: "hsl(var(--cloud))",
+          foreground: "hsl(var(--cloud-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
+        },
+        dusk: {
+          DEFAULT: "hsl(var(--dusk))",
+          foreground: "hsl(var(--dusk-foreground))",
+        },
+        fog: {
+          DEFAULT: "hsl(var(--fog))",
+          foreground: "hsl(var(--fog-foreground))",
+        },
+        gleam: {
+          DEFAULT: "hsl(var(--gleam))",
+          foreground: "hsl(var(--gleam-foreground))",
+        },
+        midnight: {
+          DEFAULT: "hsl(var(--midnight))",
+          foreground: "hsl(var(--midnight-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -58,9 +82,25 @@ const config: Config = {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
+        radiance: {
+          DEFAULT: "hsl(var(--radiance))",
+          foreground: "hsl(var(--radiance-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--fog))",
           foreground: "hsl(var(--fog-foreground))",
+        },
+        shine: {
+          DEFAULT: "hsl(var(--shine))",
+          foreground: "hsl(var(--shine-foreground))",
+        },
+        twilight: {
+          DEFAULT: "hsl(var(--twilight))",
+          foreground: "hsl(var(--twilight-foreground))",
+        },
+        warmth: {
+          DEFAULT: "hsl(var(--warmth))",
+          foreground: "hsl(var(--warmth-foreground))",
         },
         warning: {
           DEFAULT: "hsl(var(--warning))",
