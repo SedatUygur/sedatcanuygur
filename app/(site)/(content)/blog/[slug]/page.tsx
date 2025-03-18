@@ -3,7 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import remarkFrontmatter from "remark-frontmatter";
 
-import { fetchPost } from "@/lib/FetchPosts";
+import { fetchPost, fetchPosts } from "@/lib/FetchPosts";
 import { mdxComponents } from "@/mdx-components";
 
 type BlogPostPageParams = {
@@ -11,6 +11,17 @@ type BlogPostPageParams = {
     slug: string;
   };
 };
+
+/**
+ * Generates static route parameters for the blog post pages.
+ *
+ * @returns {Promise<BlogPostPageParams[]>} An array of objects with a single property `slug` that can be used as route parameters.
+ */
+export async function generateStaticParams() {
+  const posts = await fetchPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
 /**
  * A page that displays a single blog post given by the slug in the URL params.
  *
