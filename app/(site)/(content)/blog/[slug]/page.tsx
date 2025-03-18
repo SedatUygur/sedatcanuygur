@@ -1,6 +1,7 @@
-import { lazy } from "react";
-import { fetchPost } from "@/lib/FetchPosts";
 import { notFound } from "next/navigation";
+import { lazy } from "react";
+
+import { fetchPost } from "@/lib/FetchPosts";
 
 type BlogPostPageParams = {
   params: {
