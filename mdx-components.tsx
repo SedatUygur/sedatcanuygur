@@ -1,5 +1,6 @@
 import { Code } from "bright";
 import type { MDXComponents } from "mdx/types";
+import Image, { ImageProps } from "next/image";
 import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
 
 Code.theme = {
@@ -9,6 +10,16 @@ Code.theme = {
 };
 
 export const mdxComponents: MDXComponents = {
+  img: (props) => (
+    // eslint-disable-next-line jsx-a11y/alt-text
+    <Image
+      sizes="100vw"
+      style={{ width: "100%", height: "auto" }}
+      width={450}
+      height={450}
+      {...(props as ImageProps)}
+    />
+  ),
   PublishedOnOldBlog: PublishedOnOldBlog,
   pre: Code,
 };
