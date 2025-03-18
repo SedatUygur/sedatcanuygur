@@ -4,6 +4,8 @@ import { cache } from "react";
 
 import { Post } from "@/lib/types";
 
+const thirdPartyPosts: Post[] = [];
+
 export const fetchPosts = cache(async () => {
   const filePaths = await fs.readdir("./public/posts/");
 
@@ -16,11 +18,15 @@ export const fetchPosts = cache(async () => {
 
     if (!data.draft) {
       const postData = { ...data, content: postContent } as Post;
-      postsData.unshift(postData);
+      postsData.push(postData);
     }
   }
 
-  return postsData;
+  const postsAndThirdPartyPosts = [...postsData, ...thirdPartyPosts];
+
+  return postsAndThirdPartyPosts.sort((a, b) =>
+    a && b ? new Date(b.date).getTime() - new Date(a.date).getTime() : 0,
+  ) as Post[];
 });
 
 /**
