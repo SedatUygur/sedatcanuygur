@@ -3,9 +3,9 @@ import type { MDXComponents } from "mdx/types";
 import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
 
 Code.theme = {
-  dark: "github-dark",
-  light: "github-light",
-  lightSelector: "html.dark",
+  dark: "solarized-dark",
+  light: "solarized-light",
+  lightSelector: "html.light",
 };
 
 export const mdxComponents: MDXComponents = {
