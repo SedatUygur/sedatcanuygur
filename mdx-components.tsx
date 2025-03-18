@@ -5,6 +5,7 @@ import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
 Code.theme = {
   dark: "github-dark",
   light: "github-light",
+  lightSelector: "html.dark",
 };
 
 export const mdxComponents: MDXComponents = {
