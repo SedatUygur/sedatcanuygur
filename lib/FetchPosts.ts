@@ -5,12 +5,12 @@ import { cache } from "react";
 import { Post } from "@/lib/types";
 
 export const fetchPosts = cache(async () => {
-  const filePaths = await fs.readdir("public/posts/");
+  const filePaths = await fs.readdir("./public/posts/");
 
   const postsData = [];
 
   for (const filePath of filePaths) {
-    const postFilePath = `public/posts/${filePath}`;
+    const postFilePath = `./public/posts/${filePath}`;
     const postContent = await fs.readFile(postFilePath, "utf8");
     const { data } = matter(postContent);
 
