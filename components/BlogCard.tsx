@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardFooter,
 } from "@/components/ui/Card";
 
 type BlogCardProps = {
@@ -16,19 +15,13 @@ type BlogCardProps = {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{post.title}</CardTitle>
-        <CardDescription>{post.description}</CardDescription>
-      </CardHeader>
-      <CardFooter>
-        <Link
-          className="text-blue-500 hover:underline"
-          href={`/blog/${post.slug}`}
-        >
-          Read More
-        </Link>
-      </CardFooter>
-    </Card>
+    <Link href={`/blog/${post.slug}`}>
+      <Card>
+        <CardHeader>
+          <CardTitle>{post.title}</CardTitle>
+          <CardDescription>{post.description}</CardDescription>
+        </CardHeader>
+      </Card>
+    </Link>
   );
 }
