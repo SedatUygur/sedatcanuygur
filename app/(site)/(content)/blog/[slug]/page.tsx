@@ -8,7 +8,7 @@ import { fetchPost, fetchPosts } from "@/lib/FetchPosts";
 import { mdxComponents } from "@/mdx-components";
 
 type MetadataProps = {
-  params: { id: string };
+  params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
@@ -21,7 +21,7 @@ type MetadataProps = {
 export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
-  const slug = params.id;
+  const slug = params.slug;
 
   const post = await fetchPost(slug);
 
