@@ -19,7 +19,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sedat Can Uygur",
+  title: {
+    template: "%s | Sedat Can Uygur",
+    default: "Sedat Can Uygur",
+  },
   description: "Sedat Can Uygur | My personal website",
 };
 
