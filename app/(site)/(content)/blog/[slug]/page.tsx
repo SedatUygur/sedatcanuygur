@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -7,9 +7,8 @@ import remarkFrontmatter from "remark-frontmatter";
 import { fetchPost, fetchPosts } from "@/lib/FetchPosts";
 import { mdxComponents } from "@/mdx-components";
 
-type MetadataProps = {
+type BlogPostPageParams = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 /**
@@ -20,8 +19,8 @@ type MetadataProps = {
  */
 export async function generateMetadata({
   params,
-}: MetadataProps): Promise<Metadata> {
-  const slug = params.slug;
+}: BlogPostPageParams): Promise<Metadata> {
+  const { slug } = await params;
 
   const post = await fetchPost(slug);
 
@@ -34,12 +33,6 @@ export async function generateMetadata({
     return {};
   }
 }
-
-type BlogPostPageParams = {
-  params: {
-    slug: string;
-  };
-};
 
 /**
  * Generates static route parameters for the blog post pages.
