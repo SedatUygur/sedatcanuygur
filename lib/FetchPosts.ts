@@ -34,6 +34,20 @@ async function parseMdxFiles() {
 const parsedMdxFiles = cache(parseMdxFiles);
 
 /**
+ * Retrieves all MDX posts from the `public/posts/` directory.
+ * The posts are sorted in descending order by date.
+ *
+ * @returns {Promise<Post[]>} An array of posts.
+ */
+export async function fetchMDXPosts() {
+  const postsData = await parsedMdxFiles();
+
+  return postsData.sort((a, b) =>
+    a && b ? new Date(b.date).getTime() - new Date(a.date).getTime() : 0,
+  ) as Post[];
+}
+
+/**
  * Retrieves all posts from the `public/posts/` directory and third-party blog posts.
  * The posts are sorted in descending order by date.
  *

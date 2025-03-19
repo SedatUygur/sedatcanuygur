@@ -22,6 +22,7 @@ export async function generateMetadata({
 
   if (post) {
     return {
+      metadataBase: new URL("https://sedatcanuygur.vercel.app"),
       title: post.title,
       description: post.description,
       openGraph: {
