@@ -1,12 +1,18 @@
 import fs from "fs/promises";
 import matter from "gray-matter";
-import { cache } from "react";
+import { cache, ReactElement } from "react";
 
 import { Post } from "@/lib/types";
 
 const thirdPartyPosts: Post[] = [];
 
-export const fetchPosts = cache(async () => {
+/**
+ * Reads all MDX files in the `public/posts/` directory and returns an array of
+ * parsed posts. Only non-draft posts are included.
+ *
+ * @returns {Promise<Post[]>} An array of parsed posts.
+ */
+async function parseMdxFiles() {
   const filePaths = await fs.readdir("./public/posts/");
 
   const postsData = [];
@@ -22,12 +28,25 @@ export const fetchPosts = cache(async () => {
     }
   }
 
+  return postsData;
+}
+
+const parsedMdxFiles = cache(parseMdxFiles);
+
+/**
+ * Retrieves all posts from the `public/posts/` directory and third-party blog posts.
+ * The posts are sorted in descending order by date.
+ *
+ * @returns {Promise<Post[]>} An array of posts.
+ */
+export async function fetchPosts() {
+  const postsData = await parsedMdxFiles();
   const postsAndThirdPartyPosts = [...postsData, ...thirdPartyPosts];
 
   return postsAndThirdPartyPosts.sort((a, b) =>
     a && b ? new Date(b.date).getTime() - new Date(a.date).getTime() : 0,
   ) as Post[];
-});
+}
 
 /**
  * Fetches a single blog post by its slug.
@@ -41,4 +60,22 @@ export async function fetchPost(slug: string) {
   return posts.find((post) => post.slug === slug);
 }
 
-export default fetchPosts;
+/**
+ * Returns an object of React components keyed by blog post slug.
+ *
+ * @returns {Promise<Record<string, () => ReactElement>>} An object of React components.
+ */
+export async function postComponents() {
+  const components: Record<string, () => ReactElement> = {};
+
+  const postsData = await parsedMdxFiles();
+
+  for (const post of postsData) {
+    const { default: Component } = await import(
+      `@/public/posts/${post.date}-${post.slug}.mdx`
+    );
+
+    components[post.slug] = Component;
+  }
+  return components;
+}

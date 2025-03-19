@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-import fetchPosts from "@/lib/FetchPosts";
+import { fetchPosts } from "@/lib/FetchPosts";
 
 export default async function Home() {
   const posts = await fetchPosts();

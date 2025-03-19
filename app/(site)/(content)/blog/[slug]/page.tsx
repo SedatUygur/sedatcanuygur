@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import remarkGfm from "remark-gfm";
 import remarkFrontmatter from "remark-frontmatter";
 
 import { fetchPost, fetchPosts } from "@/lib/FetchPosts";
@@ -66,7 +65,7 @@ export default async function BlogPost({ params }: BlogPostPageParams) {
       options={{
         parseFrontmatter: true,
         mdxOptions: {
-          remarkPlugins: [remarkGfm, remarkFrontmatter],
+          remarkPlugins: [remarkFrontmatter],
         },
       }}
       components={mdxComponents}
