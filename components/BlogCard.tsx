@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import { ExternalLinkIcon } from "lucide-react";
 
 import { Post } from "@/lib/types";
 
@@ -29,7 +29,7 @@ export function BlogCard({ post }: BlogCardProps) {
     <CardFooter className="pt-2 pb-6">
       <div className="flex flex-row space-x-2 items-center">
         <p>https://sedat-can-uygur.vercel.app</p>
-        <ExternalLinkIcon />
+        <ExternalLinkIcon className="h-4 w-4" />
       </div>
     </CardFooter>
   );
