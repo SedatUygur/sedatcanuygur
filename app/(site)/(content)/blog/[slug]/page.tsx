@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -5,6 +6,34 @@ import remarkFrontmatter from "remark-frontmatter";
 
 import { fetchPost, fetchPosts } from "@/lib/FetchPosts";
 import { mdxComponents } from "@/mdx-components";
+
+type MetadataProps = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+/**
+ * Generates metadata for a blog post based on its slug.
+ *
+ * @param {{ params: { id: string } }} props - The props given to the page component.
+ * @returns {Promise<Metadata>} The metadata for the blog post, or an empty object if the post is not found.
+ */
+export async function generateMetadata({
+  params,
+}: MetadataProps): Promise<Metadata> {
+  const slug = params.id;
+
+  const post = await fetchPost(slug);
+
+  if (post) {
+    return {
+      title: post.title,
+      description: post.description,
+    };
+  } else {
+    return {};
+  }
+}
 
 type BlogPostPageParams = {
   params: {
