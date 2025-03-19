@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { fetchPost, fetchPosts, postComponents } from "@/lib/FetchPosts";
+import { fetchMDXPosts, fetchPost, postComponents } from "@/lib/FetchPosts";
 
 type BlogPostPageParams = {
   params: { slug: string };
@@ -55,7 +55,7 @@ export async function generateMetadata({
  * @returns {Promise<BlogPostPageParams[]>} An array of objects with a single property `slug` that can be used as route parameters.
  */
 export async function generateStaticParams() {
-  const posts = await fetchPosts();
+  const posts = await fetchMDXPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
