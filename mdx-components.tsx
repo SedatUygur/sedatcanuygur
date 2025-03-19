@@ -2,6 +2,7 @@ import { Code } from "bright";
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 
+import { H2WithAnchor } from "@/components/mdx/H2WithAnchor";
 import { InlineCodeBlock } from "@/components/mdx/InlineCodeBlock";
 import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
 
@@ -13,16 +14,7 @@ Code.theme = {
 
 export const mdxComponents: MDXComponents = {
   code: ({ children }) => <InlineCodeBlock>{children}</InlineCodeBlock>,
-  h2: ({ id, children }) => {
-    return (
-      <h2 id={id}>
-        {children}
-        <a aria-label={id} href={`#${id}`} className="p-1 italic font-bold">
-          #
-        </a>
-      </h2>
-    );
-  },
+  h2: ({ id, children }) => <H2WithAnchor id={id}>{children}</H2WithAnchor>,
   img: (props) => (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image
