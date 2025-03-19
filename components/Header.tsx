@@ -1,44 +1,87 @@
-import Link from "next/link";
+"use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import * as React from "react";
+import { HomeIcon, BookOpen, Contact } from "lucide-react";
+
 import { ModeToggle } from "@/components/ModeToggle";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/DropdownMenu";
 
 export function Header() {
+  const pathname = usePathname();
+
+  const baseIcon = "h-7 w-7";
+  const activeIcon = `${baseIcon} stroke-shine`;
   return (
-    <header>
-      <div className="hidden h-full flex-row md:flex">
-        <div className="container px-0 flex flex-row items-start justify-between space-y-2 sm:flex-row sm:items-center sm:space-y-0 md:h-20">
-          <div className="flex flex-row items-start space-y-2 space-x-4">
-            <Link href="/">
-              <div className="flex flex-row items-center space-x-2">
-                <Avatar>
-                  <AvatarImage
-                    src="https://avatars.githubusercontent.com/u/90511329"
-                    alt="Sedat Can Uygur"
-                  />
-                  <AvatarFallback>SCU</AvatarFallback>
-                </Avatar>
-                <h2>sedatcanuygur.com</h2>
-              </div>
-            </Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
-          <div className="flex flex-row items-start justify-end space-y-2 space-x-4 sm:flex-row sm:items-center sm:space-y-0 md:h-16">
-            <ModeToggle />
-          </div>
-        </div>
-        <div className="md:hidden flex items-center">
-          <button className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400">
-            <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-              <path
-                clipRule="evenodd"
-                d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
-                fillRule="evenodd"
+    <header className="mb-4">
+      <div className="hidden md:flex h-full flex-row">
+        <div className="container px-0 flex flex-row items-center justify-between">
+          <div className="flex flex-row items-end space-x-4">
+            <Link aria-label="Home" href="/">
+              <HomeIcon
+                className={`link ${pathname === "/" ? activeIcon : baseIcon}`}
               />
-            </svg>
-          </button>
+            </Link>
+            <Link aria-label="Blog" href="/blog">
+              <BookOpen
+                className={`link ${
+                  pathname.includes("/blog") ? activeIcon : baseIcon
+                }`}
+              />
+            </Link>
+            <Link aria-label="Contact" href="/contact">
+              <Contact
+                className={`link ${
+                  pathname === "/contact" ? activeIcon : baseIcon
+                }`}
+              />
+            </Link>
+          </div>
+          <ModeToggle />
         </div>
+      </div>
+      <div className="md:hidden flex">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400">
+              <svg className="h-7 w-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  clipRule="evenodd"
+                  d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem asChild>
+              <Link aria-label="Home" href="/">
+                Home
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link aria-label="Blog" href="/blog">
+                Blog
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link aria-label="CV" href="/cv">
+                CV
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link aria-label="Contact" href="/contact">
+                Contact
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   );
