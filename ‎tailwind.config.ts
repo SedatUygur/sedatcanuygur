@@ -107,6 +107,9 @@ const config: Config = {
           foreground: "hsl(var(--warning-foreground))",
         },
       },
+      fontFamily: {
+        mono: ["var(--font-geist-mono)"],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

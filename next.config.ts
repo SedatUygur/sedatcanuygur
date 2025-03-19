@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
-import remarkGfm from "remark-gfm";
+import rehypeMdxCodeProps from "rehype-mdx-code-props";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -13,11 +13,10 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
-      remarkGfm,
       remarkFrontmatter,
       [remarkMdxFrontmatter, { name: "frontmatter" }],
     ],
-    rehypePlugins: [],
+    rehypePlugins: [rehypeMdxCodeProps],
   },
 });
 
