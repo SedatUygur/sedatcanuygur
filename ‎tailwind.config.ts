@@ -94,6 +94,14 @@ const config: Config = {
           DEFAULT: "hsl(var(--shine))",
           foreground: "hsl(var(--shine-foreground))",
         },
+        solaralizedlight: {
+          DEFAULT: "hsl(var(--solarized-light))",
+          foreground: "hsl(var(--solarized-light-foreground)",
+        },
+        solaralizeddark: {
+          DEFAULT: "hsl(var(--solarized-dark))",
+          foreground: "hsl(var(--solarized-dark-foreground)",
+        },
         twilight: {
           DEFAULT: "hsl(var(--twilight))",
           foreground: "hsl(var(--twilight-foreground))",

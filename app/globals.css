@@ -30,6 +30,12 @@ body {
     --midnight: 0 20% 4.9%;
     --midnight-foreground: 0 0% 100%;
 
+    --solarized-light: 44 87% 94%;
+    --solarized-light-foreground: 196 13% 45%;
+
+    --solarized-dark: 192 100% 11%;
+    --solarized-dark-foreground: 186 8% 55%;
+
     --twilight: 183 37.5% 9.4%;
     --twilight-foreground: 0 0% 100%;
 
