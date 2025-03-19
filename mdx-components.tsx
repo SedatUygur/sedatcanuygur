@@ -1,6 +1,8 @@
 import { Code } from "bright";
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
+
+import { InlineCodeBlock } from "@/components/mdx/InlineCodeBlock";
 import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
 
 Code.theme = {
@@ -10,6 +12,7 @@ Code.theme = {
 };
 
 export const mdxComponents: MDXComponents = {
+  code: ({ children }) => <InlineCodeBlock>{children}</InlineCodeBlock>,
   h2: ({ id, children }) => {
     return (
       <h2 id={id}>
