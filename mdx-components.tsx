@@ -10,6 +10,16 @@ Code.theme = {
 };
 
 export const mdxComponents: MDXComponents = {
+  h2: ({ id, children }) => {
+    return (
+      <h2>
+        {children}
+        <a aria-label={id} href={`#${id}`} className="p-5 italic font-bold">
+          #
+        </a>
+      </h2>
+    );
+  },
   img: (props) => (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image
