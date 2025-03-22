@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     description: "Senior Software Engineer",
     locale: "en_US",
-    siteName: "Sedat Can Uygur's site",
+    siteName: "Sedat Can Uygur's personal website",
     title: "Sedat Can Uygur",
     type: "website",
     url: "https://sedatcanuygur.vercel.app",

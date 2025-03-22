@@ -3,6 +3,24 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description: "About Me",
+  metadataBase: new URL("https://sedatcanuygur.vercel.app"),
+  openGraph: {
+    title: "About - Sedat Can Uygur",
+    description: "About Me",
+    url: "https://sedatcanuygur.vercel.app/about",
+    siteName: "Sedat Can Uygur's personal website",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/api/og?title=About",
+        width: 960,
+        height: 540,
+        alt: "About Me page",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function About() {

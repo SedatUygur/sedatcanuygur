@@ -9,6 +9,24 @@ import { XButton } from "@/components/ui/XButton";
 export const metadata: Metadata = {
   title: "Contact Me",
   description: "Contact Me",
+  metadataBase: new URL("https://sedatcanuygur.vercel.app"),
+  openGraph: {
+    title: "Contact - Sedat Can Uygur",
+    description: "Contact Me",
+    url: "https://sedatcanuygur.vercel.app/contact",
+    siteName: "Sedat Can Uygur's personal website",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/api/og?title=Contact",
+        width: 960,
+        height: 540,
+        alt: "Contact page",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function Component() {
