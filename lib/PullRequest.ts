@@ -75,6 +75,6 @@ export async function openSourcePullRequests(): Promise<PullRequest[]> {
   for await (const response of pageIterator(pullRequestsQuery)) {
     pullRequests = response.viewer.pullRequests.nodes;
   }
-  //return pullRequests.filter((pullRequest) => pullRequest.repository.owner.login !== "jer-k");
+  //return pullRequests.filter((pullRequest) => pullRequest.repository.owner.login !== "SedatUygur");
   return pullRequests;
 }
