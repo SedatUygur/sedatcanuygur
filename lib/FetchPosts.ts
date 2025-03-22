@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import matter from "gray-matter";
+import path from "node:path";
 import { cache, ReactElement } from "react";
 
 import { Post } from "@/lib/types";
@@ -13,12 +14,12 @@ const thirdPartyPosts: Post[] = [];
  * @returns {Promise<Post[]>} An array of parsed posts.
  */
 async function parseMdxFiles() {
-  const filePaths = await fs.readdir("./public/posts/");
+  const filePaths = await fs.readdir(path.join(process.cwd(), "public/posts"));
 
   const postsData = [];
 
   for (const filePath of filePaths) {
-    const postFilePath = `./public/posts/${filePath}`;
+    const postFilePath = path.join(process.cwd(), "public/posts", filePath);
     const postContent = await fs.readFile(postFilePath, "utf8");
     const { data } = matter(postContent);
 

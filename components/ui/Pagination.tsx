@@ -54,6 +54,7 @@ const PaginationLink = ({
         size,
       }),
       className,
+      "text-primary dark:text-bright",
     )}
     {...props}
   />
@@ -70,7 +71,7 @@ const PaginationPrevious = ({
     aria-label="Go to previous page"
     size="default"
     className={wrapClassNames(
-      "gap-1 pl-2.5",
+      "gap-1 pl-2.5 text-primary dark:text-bright",
       className,
       disabled && "pointer-events-none opacity-50",
     )}
@@ -92,7 +93,7 @@ const PaginationNext = ({
     aria-label="Go to next page"
     size="default"
     className={wrapClassNames(
-      "gap-1 pr-2.5",
+      "gap-1 pr-2.5 text-primary dark:text-bright",
       className,
       disabled && "pointer-events-none opacity-50",
     )}
