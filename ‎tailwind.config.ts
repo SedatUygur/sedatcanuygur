@@ -128,6 +128,9 @@ const config: Config = {
           to: { height: "0" },
         },
       },
+      scale: {
+        101: "1.01",
+      },
     },
   },
   darkMode: "class",
