@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import * as React from "react";
 import { HomeIcon, BookOpen, Contact } from "lucide-react";
 
+import { GitHubButton } from "@/components/ui/GitHubButton";
 import { ModeToggle } from "@/components/ModeToggle";
 import {
   DropdownMenu,
@@ -43,7 +44,12 @@ export function Header() {
               />
             </Link>
           </div>
-          <ModeToggle />
+          <div>
+            <GitHubButton
+              href={"https://github.com/SedatUygur/sedatcanuygur"}
+            />
+            <ModeToggle />
+          </div>
         </div>
       </div>
       <div className="md:hidden flex">
