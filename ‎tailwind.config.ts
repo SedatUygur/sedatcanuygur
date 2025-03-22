@@ -118,6 +118,9 @@ const config: Config = {
       fontFamily: {
         mono: ["var(--font-geist-mono)"],
       },
+      gridTemplateRows: {
+        hero: "repeat(2, minmax(0, 0.5fr))",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
