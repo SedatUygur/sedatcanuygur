@@ -15,10 +15,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: post.date,
   }));
 
-  const routes = ["", "/blog", "/contact", "/cv"].map((route) => ({
-    url: `https://sedatcanuygur.vercel.app${route}`,
-    lastModified: new Date().toISOString().split("T")[0],
-  }));
+  const routes = ["", "/blog", "/contact", "/cv", "open-source"].map(
+    (route) => ({
+      url: `https://sedatcanuygur.vercel.app${route}`,
+      lastModified: new Date().toISOString().split("T")[0],
+    }),
+  );
 
   return [...routes, ...blogs];
 }

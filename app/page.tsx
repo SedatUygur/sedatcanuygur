@@ -40,6 +40,11 @@ export default async function Home() {
                   description="My interactive CV"
                   href="/cv"
                 />
+                <HeroCard
+                  title="Open Source"
+                  description="Open source contributions"
+                  href="/open-source"
+                />
               </div>
             </div>
           </section>
