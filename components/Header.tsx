@@ -72,6 +72,11 @@ export function Header() {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
+              <Link aria-label="About" href="/about">
+                About
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link aria-label="Blog" href="/blog">
                 Blog
               </Link>
