@@ -69,13 +69,15 @@ export async function generateStaticParams() {
  * @param {BlogPostPageParams} params - The props given to the page component.
  * @returns {React.ReactElement} The blog post page element.
  */
-export default async function BlogPost({ params }: BlogPostPageParams) {
+export default async function BlogPost({
+  params,
+}: BlogPostPageParams): Promise<React.ReactElement> {
   const { slug } = await params;
-  const post = await fetchPost(slug);
-
-  if (!post) return notFound();
-
   const components = await postComponents();
 
-  return components[slug]();
+  const componentsSlug = components[slug];
+
+  if (!componentsSlug) return notFound();
+
+  return componentsSlug();
 }
