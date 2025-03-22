@@ -8,22 +8,34 @@ import {
 } from "@/components/ui/Card";
 
 type Props = {
-  title: string;
-  description: string;
+  description: string | React.ReactElement;
+  externalLink?: boolean;
   href: string;
+  title: string;
 };
 
-export function HeroCard({ title, description, href }: Props) {
-  return (
+export function HeroCard({
+  title,
+  description,
+  href,
+  externalLink = false,
+}: Props) {
+  const card = (
+    <Card className="w-full shadow-lg hover:shadow-xl hover:scale-101">
+      <CardHeader className="p-4">
+        <CardTitle className="text-primary dark:text-bright">{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+    </Card>
+  );
+
+  return externalLink ? (
+    <a className="flex w-full" href={href} target="_blank">
+      {card}
+    </a>
+  ) : (
     <Link className="flex w-full" href={href}>
-      <Card className="w-full md:w-80 md:h-24 shadow-lg hover:shadow-xl hover:scale-101">
-        <CardHeader className="p-4">
-          <CardTitle className="text-primary dark:text-bright">
-            {title}
-          </CardTitle>
-          <CardDescription>{description}</CardDescription>
-        </CardHeader>
-      </Card>
+      {card}
     </Link>
   );
 }

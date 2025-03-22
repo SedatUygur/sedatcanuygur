@@ -38,6 +38,12 @@ export function HeroComponent() {
                 description="Open source contributions"
                 href="/open-source"
               />
+              <HeroCard
+                externalLink
+                title="Freelance Software Engineer"
+                description="Working as a Freelance Software Engineer"
+                href="https://www.linkedin.com/in/sedat-can-uygur"
+              />
             </div>
           </div>
         </div>
