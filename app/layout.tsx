@@ -22,11 +22,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Sedat Can Uygur",
-    default: "Sedat Can Uygur",
-  },
   description: "Sedat Can Uygur | My personal website",
+  icons: {
+    shortcut: "./favicon.ico",
+  },
+  title: {
+    default: "Sedat Can Uygur",
+    template: "%s | Sedat Can Uygur",
+  },
+  openGraph: {
+    description: "Senior Software Engineer",
+    locale: "en_US",
+    siteName: "Sedat Can Uygur's site",
+    title: "Sedat Can Uygur",
+    type: "website",
+    url: "https://sedatcanuygur.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@_SedatUygur",
+    title: "Sedat Can Uygur",
+  },
 };
 
 export default function RootLayout({
