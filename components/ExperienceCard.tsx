@@ -11,13 +11,13 @@ import {
 type Props = {
   companyName: string;
   companyUrl?: string;
-  workType: "On-Site" | "Remote";
+  workType: "On-Site" | "Remote" | "Hybrid" | "On-Site & Remote";
   duration: string;
   title: string;
   description: ReactElement;
 };
 
-export function WorkExperienceCard({
+export function ExperienceCard({
   companyName,
   companyUrl,
   workType,
@@ -49,7 +49,7 @@ export function WorkExperienceCard({
           <h4 className="font-mono text-sm leading-none">{title}</h4>
         </div>
       </CardHeader>
-      <CardContent className="py-0 mt-2 text-xs">{description}</CardContent>
+      <CardContent className="py-0 mt-2 text-sm">{description}</CardContent>
       <CardFooter className="py-0 mt-2 print:hidden">
         <div className="flex items-center justify-end w-full"></div>
       </CardFooter>
