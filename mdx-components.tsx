@@ -2,6 +2,8 @@ import { Code } from "bright";
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 
+import { Aside } from "@/components/mdx/Aside";
+import { Blockquote } from "@/components/mdx/Blockquote";
 import { H2WithAnchor } from "@/components/mdx/H2WithAnchor";
 import { InlineCodeBlock } from "@/components/mdx/InlineCodeBlock";
 import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
@@ -13,6 +15,13 @@ Code.theme = {
 };
 
 export const mdxComponents: MDXComponents = {
+  a: ({ href, children }) => (
+    <a href={href} target="_blank">
+      {children}
+    </a>
+  ),
+  Aside: Aside,
+  blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
   code: ({ children }) => <InlineCodeBlock>{children}</InlineCodeBlock>,
   h2: ({ id, children }) => <H2WithAnchor id={id}>{children}</H2WithAnchor>,
   img: (props) => (
