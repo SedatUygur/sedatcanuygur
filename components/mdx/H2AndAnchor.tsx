@@ -13,7 +13,7 @@ type Props = {
  * @returns {JSX.Element} The rendered h2 element with an anchor link.
  */
 
-export function H2WithAnchor({ id, children }: Props) {
+export function H2AndAnchor({ id, children }: Props) {
   return (
     <h2 className="group" id={id}>
       {children}
