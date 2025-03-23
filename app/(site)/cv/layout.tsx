@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "CV",
+  alternates: {
+    canonical: "https://sedatcanuygur.vercel.app/cv",
+  },
   description: "My CV",
   metadataBase: new URL("https://sedatcanuygur.vercel.app"),
+  title: "CV",
   openGraph: {
     title: "CV - Sedat Can Uygur",
     description: "My CV",

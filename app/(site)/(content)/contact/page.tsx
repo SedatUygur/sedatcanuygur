@@ -7,9 +7,12 @@ import { LinkedInButton } from "@/components/ui/LinkedInButton";
 import { XButton } from "@/components/ui/XButton";
 
 export const metadata: Metadata = {
-  title: "Contact Me",
+  alternates: {
+    canonical: "https://sedatcanuygur.vercel.app/contact",
+  },
   description: "Contact Me",
   metadataBase: new URL("https://sedatcanuygur.vercel.app"),
+  title: "Contact Me",
   openGraph: {
     title: "Contact - Sedat Can Uygur",
     description: "Contact Me",

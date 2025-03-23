@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  alternates: {
+    canonical: "https://sedatcanuygur.vercel.app/about",
+  },
   description: "About Me",
   metadataBase: new URL("https://sedatcanuygur.vercel.app"),
+  title: "About",
   openGraph: {
     title: "About - Sedat Can Uygur",
     description: "About Me",

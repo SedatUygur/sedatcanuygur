@@ -22,9 +22,12 @@ export async function generateMetadata({
 
   if (post) {
     return {
+      alternates: {
+        canonical: `https://sedatcanuygur.vercel.app/blog/${slug}`,
+      },
+      description: post.description,
       metadataBase: new URL("https://sedatcanuygur.vercel.app"),
       title: post.title,
-      description: post.description,
       openGraph: {
         url: `/blog/${slug}`,
         title: `${post.title}`,

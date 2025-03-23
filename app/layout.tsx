@@ -4,11 +4,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-/* import { ThemeProvider } from "@/components/ThemeProvider";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Toaster } from "@/components/ui/Toaster"; */
-
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,13 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: `https://sedatcanuygur.vercel.app`,
+  },
   description: "Sedat Can Uygur | My personal website",
   icons: {
     shortcut: "./favicon.ico",
-  },
-  title: {
-    default: "Sedat Can Uygur",
-    template: "%s | Sedat Can Uygur",
   },
   openGraph: {
     description: "Senior Software Engineer",
@@ -37,6 +31,10 @@ export const metadata: Metadata = {
     title: "Sedat Can Uygur",
     type: "website",
     url: "https://sedatcanuygur.vercel.app",
+  },
+  title: {
+    default: "Sedat Can Uygur",
+    template: "%s | Sedat Can Uygur",
   },
   twitter: {
     card: "summary_large_image",
