@@ -31,7 +31,7 @@ export function HeroComponent() {
             </p>
           </div>
           <div className="flex [grid-area:sub]">
-            <div className="flex flex-col items-start space-y-2 h-full w-full">
+            <div className="flex flex-col items-start lg:justify-between space-y-2 h-full w-full">
               <HeroCard title="CV" description="My interactive CV" href="/cv" />
               <HeroCard
                 title="Open Source"

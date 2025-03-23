@@ -31,7 +31,7 @@ export async function generateMetadata({
       openGraph: {
         url: `/blog/${slug}`,
         title: `${post.title}`,
-        siteName: "sedatcanuygur.vercel.app",
+        siteName: "Sedat Can Uygur's blog",
         description: post.description,
         images: [
           {

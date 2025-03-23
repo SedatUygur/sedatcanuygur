@@ -24,8 +24,18 @@ export const metadata: Metadata = {
   icons: {
     shortcut: "./favicon.ico",
   },
+  metadataBase: new URL("https://sedatcanuygur.vercel.app"),
   openGraph: {
     description: "Senior Software Engineer",
+    images: [
+      {
+        url: `/api/og??title=${encodeURIComponent("Sedat Can Uygur's personal website")}`,
+        width: 960,
+        height: 540,
+        alt: "Sedat Can Uygur's personal website",
+        type: "image/png",
+      },
+    ],
     locale: "en_US",
     siteName: "Sedat Can Uygur's personal website",
     title: "Sedat Can Uygur",

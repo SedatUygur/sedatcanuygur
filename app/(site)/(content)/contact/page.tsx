@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/api/og?title=Contact",
         width: 960,
         height: 540,
-        alt: "Contact page",
+        alt: "Sedat Can Uygur's Contact page",
         type: "image/png",
       },
     ],

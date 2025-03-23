@@ -1,4 +1,4 @@
-# sedatcanuygur.com
+# [sedatcanuygur.com](https://sedatcanuygur.vercel.app)
 
 Hello and welcome to the repository for my personal website. I started using Next.js professionally for a while and I will add new features (functionality with React Server Components, Server Actions, etc) to my website. I wanted a place to play around and experiment with them. My old website was primarily a blog but I struggled to make changes or upgrade packages on it. Thus I decided to rebuild my personal site from the ground up using Next.js while giving myself a chance to learn about the new features in Next.js and React as well as Typescript.
 Below is list of the libraries I've been using.
