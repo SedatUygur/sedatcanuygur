@@ -7,4 +7,5 @@ export type Post = {
   slug: string;
   tags: string[];
   title: string;
+  updated?: string;
 };

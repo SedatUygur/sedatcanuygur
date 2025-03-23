@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogs = posts.map((post) => ({
     url: `https://sedatcanuygur.vercel.app/blog/${post.slug}`,
-    lastModified: post.date,
+    lastModified: post.updated || post.date,
   }));
 
   const routes = ["", "/blog", "/contact", "/cv", "open-source"].map(
