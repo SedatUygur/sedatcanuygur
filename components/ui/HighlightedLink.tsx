@@ -1,4 +1,8 @@
+"use client";
+
+import clsx from "clsx";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
   href: string;
@@ -6,9 +10,18 @@ type Props = {
 };
 
 export function HighlightedLink({ href, label }: Props) {
+  const pathname = usePathname();
+  const pathMatch = href === "/" ? pathname === href : pathname.includes(href);
+
   return (
     <Link
-      className="text-primary hover:text-primary/70 dark:text-bright dark:hover:text-bright/70"
+      className={clsx(
+        "text-primary hover:text-primary/70 dark:text-bright dark:hover:text-bright/70",
+        {
+          "text-shine": pathMatch,
+          "dark:text-cloud": pathMatch,
+        },
+      )}
       aria-label={label}
       href={href}
     >
