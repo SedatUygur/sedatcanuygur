@@ -1,10 +1,12 @@
 import { BlogCard } from "@/components/BlogCard";
 import { Pagination } from "@/components/Pagination";
-import { fetchPosts } from "@/lib/FetchPosts";
+import { TagSelect } from "@/components/TagSelect";
+import { fetchPosts, fetchTags } from "@/lib/FetchPosts";
 
 type BlogProps = {
   searchParams: {
     page?: string;
+    tags?: string;
   };
 };
 
@@ -14,15 +16,27 @@ export default async function Blog({ searchParams }: BlogProps) {
   const start = (page - 1) * 5;
 
   const posts = await fetchPosts();
-  const numPages = Math.ceil(posts.length / 5);
+  const tags = await fetchTags();
+
+  const selectedTags = searchParams.tags ? searchParams.tags.split(",") : [];
+  const filteredPosts =
+    selectedTags.length > 0
+      ? posts.filter((post) =>
+          post.tags.some((tag) => selectedTags.includes(tag)),
+        )
+      : posts;
+  const numPages = Math.ceil(filteredPosts.length / 5);
 
   return (
     <div className="flex flex-col items-center space-y-6">
       <h1 className="text-primary dark:text-bright font-bold text-3xl">
         Blog Posts
       </h1>
+      <div className="w-full max-w-sm">
+        <TagSelect tags={tags} />
+      </div>
       <div className="flex flex-col space-y-4 not-prose">
-        {posts.slice(start, start + 5).map((post) => (
+        {filteredPosts.slice(start, start + 5).map((post) => (
           <BlogCard key={post.slug} post={post} />
         ))}
         <Pagination page={page} numPages={numPages} path="blog" />
