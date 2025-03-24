@@ -4,6 +4,7 @@ import Image, { ImageProps } from "next/image";
 
 import { Aside } from "@/components/mdx/Aside";
 import { Blockquote } from "@/components/mdx/Blockquote";
+import { BlockquoteWithLink } from "./components/mdx/BlockquoteWithLink";
 import { H2AndAnchor } from "@/components/mdx/H2AndAnchor";
 import { InlineCodeBlock } from "@/components/mdx/InlineCodeBlock";
 import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
@@ -22,15 +23,17 @@ export const mdxComponents: MDXComponents = {
   ),
   Aside: Aside,
   blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+  BlockquoteWithLink: BlockquoteWithLink,
   code: ({ children }) => <InlineCodeBlock>{children}</InlineCodeBlock>,
   h2: ({ id, children }) => <H2AndAnchor id={id}>{children}</H2AndAnchor>,
   img: (props) => (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image
+      placeholder="blur"
       sizes="100vw"
       style={{ width: "100%", height: "auto" }}
-      width={450}
       height={450}
+      width={450}
       {...(props as ImageProps)}
     />
   ),
