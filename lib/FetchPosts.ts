@@ -76,6 +76,22 @@ export async function fetchPost(slug: string) {
 }
 
 /**
+ * Retrieves all tags from the posts in the `public/posts/` directory.
+ * The tags are deduplicated and sorted in ascending order.
+ *
+ * @returns {Promise<string[]>} An array of tags.
+ */
+export async function fetchTags() {
+  const postsData = await parsedMdxFiles();
+
+  const tags = postsData.reduce<string[]>(
+    (acc, post) => [...acc, ...post.tags],
+    [],
+  );
+  return [...new Set(tags)].sort();
+}
+
+/**
  * Returns an object of React components keyed by blog post slug.
  *
  * @returns {Promise<Record<string, () => ReactElement>>} An object of React components.
