@@ -1,9 +1,8 @@
 "use client";
 
-import { Check, ChevronsUpDown } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
-
+import { Check, ChevronsUpDown } from "lucide-react";
+import { wrapClassNames } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import {
   Command,
@@ -18,19 +17,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/Popover";
 import { Badge } from "@/components/ui/Badge";
-import { wrapClassNames } from "@/lib/utils";
-
-/**
- * A component that provides a tag selection interface using a dropdown popover.
- *
- * @param {Object} props - The component props.
- * @param {string[]} props.tags - An array of available tags to select from.
- *
- * This component allows users to select and deselect tags, updating the URL query
- * parameters accordingly. Selected tags are displayed as badges, and users can remove
- * them by clicking the close button on each badge. The component uses a popover to
- * display a searchable list of tags, and allows toggling tag selection.
- */
+import { useRouter, useSearchParams } from "next/navigation";
 
 export function TagSelect({ tags }: { tags: string[] }) {
   const [open, setOpen] = React.useState(false);

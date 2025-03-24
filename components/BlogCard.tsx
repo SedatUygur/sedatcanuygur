@@ -45,11 +45,12 @@ export function BlogCard({ post }: BlogCardProps) {
           <div className="flex text-xs">{post.date}</div>
         </div>
         <div className="flex flex-row items-center justify-end gap-2 w-full">
-          {post.tags.map((tag) => (
-            <Badge variant="secondary" key={tag}>
-              {tag}
-            </Badge>
-          ))}
+          {post.tags &&
+            post.tags.map((tag) => (
+              <Badge variant="secondary" key={tag}>
+                {tag}
+              </Badge>
+            ))}
         </div>
       </div>
     </CardFooter>

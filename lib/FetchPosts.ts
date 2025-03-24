@@ -85,7 +85,7 @@ export async function fetchTags() {
   const postsData = await parsedMdxFiles();
 
   const tags = postsData.reduce<string[]>(
-    (acc, post) => [...acc, ...post.tags],
+    (acc, post) => (post.tags ? [...acc, ...post.tags] : acc),
     [],
   );
   return [...new Set(tags)].sort();

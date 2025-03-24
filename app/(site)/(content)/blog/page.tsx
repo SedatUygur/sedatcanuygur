@@ -18,7 +18,9 @@ export default async function Blog({ searchParams }: BlogProps) {
   const posts = await fetchPosts();
   const tags = await fetchTags();
 
-  const selectedTags = searchParams.tags ? searchParams.tags.split(",") : [];
+  const selectedTags = searchParameters.tags
+    ? searchParameters.tags.split(",")
+    : [];
   const filteredPosts =
     selectedTags.length > 0
       ? posts.filter((post) =>
