@@ -1,6 +1,16 @@
-export function Blockquote({ children }: React.PropsWithChildren) {
+import clsx from "clsx";
+
+type Props = {
+  noMargin?: boolean;
+} & React.PropsWithChildren;
+
+export function Blockquote({ noMargin, children }: Props) {
   return (
-    <blockquote className="border-l-gleam border-l-4 dark:border-l-dusk">
+    <blockquote
+      className={clsx("border-l-4 border-l-gleam dark:border-l-dusk", {
+        "my-0": noMargin,
+      })}
+    >
       {children}
     </blockquote>
   );
