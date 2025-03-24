@@ -35,7 +35,7 @@ export async function generateMetadata({
         description: post.description,
         images: [
           {
-            url: `/api/og?title=${post.title}&date=${post.date}`,
+            url: `/api/og?date=${post.date}&description=${post.description}&title=${post.title}`,
             width: 960,
             height: 540,
             alt: `Blog post: ${post.title}`,
