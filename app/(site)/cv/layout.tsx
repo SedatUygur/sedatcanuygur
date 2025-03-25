@@ -1,4 +1,4 @@
-import { Info, MoveLeft } from "lucide-react";
+import { Info } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -40,10 +40,7 @@ export default function CVLayout({ children }: { children: ReactNode }) {
     <div className="bg-white">
       <header className="print:hidden">
         <div className="h-full flex-row px-16 py-2">
-          <div className="px-0 flex flex-row items-center justify-between w-full">
-            <Link aria-label="Home" className="cursor-pointer" href="/">
-              <MoveLeft />
-            </Link>
+          <div className="px-0 flex flex-row items-center justify-end w-full">
             <Popover>
               <PopoverTrigger asChild>
                 <Info className="cursor-pointer" />

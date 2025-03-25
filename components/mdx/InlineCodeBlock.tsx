@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 /**
  * Renders an inline code block with Solarized Light or Dark theme depending on
