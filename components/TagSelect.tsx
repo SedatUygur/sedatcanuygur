@@ -1,8 +1,10 @@
 "use client";
 
-import * as React from "react";
 import { Check, Search, X } from "lucide-react";
-import { wrapClassNames } from "@/lib/utils";
+import { useRouter, useSearchParams } from "next/navigation";
+import * as React from "react";
+
+import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import {
   Command,
@@ -15,8 +17,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/Popover";
-import { Badge } from "@/components/ui/Badge";
-import { useRouter, useSearchParams } from "next/navigation";
+import { wrapClassNames } from "@/lib/utils";
 
 export function TagSelect({ tags }: { tags: string[] }) {
   const [open, setOpen] = React.useState(false);
@@ -46,7 +47,6 @@ export function TagSelect({ tags }: { tags: string[] }) {
       params.delete("tags");
     }
 
-    params.delete("page");
     params.delete("page"); // reset pagination when changing tags
 
     router.push(`/blog?${params.toString()}`);

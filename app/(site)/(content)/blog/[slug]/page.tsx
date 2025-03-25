@@ -44,12 +44,11 @@ export async function generateMetadata({
         ],
       },
     };
-  } else {
-    return {
-      title: "Not Found",
-      description: "The resource you were looking for does not exist",
-    };
   }
+  return {
+    title: "Not Found",
+    description: "The resource you were looking for does not exist",
+  };
 }
 
 /**
