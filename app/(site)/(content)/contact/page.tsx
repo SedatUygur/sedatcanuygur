@@ -44,7 +44,6 @@ export default function Contact() {
                 alt="Contact Image"
                 className="aspect-content rounded-lg object-cover object-center"
                 height={400}
-                placeholder="blur"
                 src="/images/SedatCanUygur.jpg"
                 width={400}
               />

@@ -96,10 +96,12 @@ const config: Config = {
         },
         solaralizedlight: {
           DEFAULT: "hsl(var(--solarized-light))",
+          darkened: "hsl(var(--solarized-light-darkened))",
           foreground: "hsl(var(--solarized-light-foreground)",
         },
         solaralizeddark: {
           DEFAULT: "hsl(var(--solarized-dark))",
+          darkened: "hsl(var(--solarized-dark-darkened))",
           foreground: "hsl(var(--solarized-dark-foreground)",
         },
         twilight: {

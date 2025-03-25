@@ -139,28 +139,6 @@ body {
 }
 
 /* Light mode styles */
-.rehype-code-title {
-  padding: 1em 1em 0 1em;
-  border-top-left-radius: 0.3em;
-  border-top-right-radius: 0.3em;
-  margin-bottom: 0;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.rehype-code-title-content {
-  background: hsl(var(--solarized-light));
-  position: relative;
-  padding: 5px;
-  left: -5px;
-}
-
-.rehype-code-title {
-  background: hsl(var(--solarized-light-darkened));
-  color: hsl(var(--solarized-light-foreground));
-}
-
 .rehype-code-title
   + div[data-bright-theme="solarized-dark"]
   + div[data-bright-theme="solarized-light"] {
@@ -184,15 +162,6 @@ body {
 }
 
 /* Dark mode styles */
-.dark .rehype-code-title {
-  background: hsl(var(--solarized-dark-darkened));
-  color: hsl(var(--solarized-dark-foreground));
-}
-
-.dark .rehype-code-title-content {
-  background: hsl(var(--solarized-dark));
-}
-
 .dark .rehype-code-title + div[data-bright-theme="solarized-dark"] {
   margin: 0 !important;
   margin-bottom: 1em !important;

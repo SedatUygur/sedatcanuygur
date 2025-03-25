@@ -150,7 +150,12 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button form="contact-form" type="submit" aria-disabled={isSubmitting}>
+        <Button
+          className="cursor-pointer"
+          form="contact-form"
+          type="submit"
+          aria-disabled={isSubmitting}
+        >
           Send
         </Button>
       </form>
