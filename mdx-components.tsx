@@ -1,10 +1,11 @@
 import { Code } from "bright";
 import type { MDXComponents } from "mdx/types";
-import Image, { ImageProps } from "next/image";
+import Image, { type ImageProps } from "next/image";
 
 import { Aside } from "@/components/mdx/Aside";
 import { Blockquote } from "@/components/mdx/Blockquote";
 import { BlockquoteWithLink } from "./components/mdx/BlockquoteWithLink";
+import { CodeblockTitle } from "@/components/mdx/CodeblockTitle";
 import { H2AndAnchor } from "@/components/mdx/H2AndAnchor";
 import { InlineCodeBlock } from "@/components/mdx/InlineCodeBlock";
 import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
@@ -17,7 +18,7 @@ Code.theme = {
 
 export const mdxComponents: MDXComponents = {
   a: ({ href, children }) => (
-    <a href={href} target="_blank">
+    <a href={href} rel="noreferrer" target="_blank">
       {children}
     </a>
   ),
@@ -25,6 +26,26 @@ export const mdxComponents: MDXComponents = {
   blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
   BlockquoteWithLink: BlockquoteWithLink,
   code: ({ children }) => <InlineCodeBlock>{children}</InlineCodeBlock>,
+  /**
+   * Renders a div element with optional class name and properties.
+   * If the class name includes "rehype-code-title", it renders a CodeblockTitle component.
+   *
+   * @param {Object} props - Component properties.
+   * @param {string} [props.className] - Optional class name for styling.
+   * @param {React.ReactNode} props.children - The content to be displayed inside the div.
+   * @returns {JSX.Element} The rendered div or CodeblockTitle component.
+   */
+  div: ({ className, children, ...props }) => {
+    if (className?.includes("rehype-code-title")) {
+      return <CodeblockTitle {...props}>{children}</CodeblockTitle>;
+    }
+
+    return (
+      <div className={className} {...props}>
+        {children}
+      </div>
+    );
+  },
   h2: ({ id, children }) => <H2AndAnchor id={id}>{children}</H2AndAnchor>,
   img: (props) => (
     // eslint-disable-next-line jsx-a11y/alt-text
