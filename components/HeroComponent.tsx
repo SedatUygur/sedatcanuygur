@@ -12,6 +12,8 @@ export function HeroComponent() {
           priority
           alt="Hero Image"
           className="aspect-content rounded-lg object-cover object-center"
+          height={510}
+          width={510}
           src={heroPic}
           placeholder="blur"
         />
@@ -23,7 +25,7 @@ export function HeroComponent() {
         <h3 className="text-primary dark:text-bright font-bold tracking-tighter text-2xl lg:text-3xl">
           Senior Software Engineer
         </h3>
-        <p className="text-primary dark:text-bright">
+        <p className="text-primary dark:text-bright text-lg lg:text-xl">
           Hi, welcome to my personal website. Here you can find my latest blog
           posts and projects.
         </p>

@@ -6,7 +6,7 @@ type Props = {
 export function XButton({ href }: Props) {
   return (
     <a href={href} target="_blank">
-      <Button className="p-0" variant="link">
+      <Button className="cursor-pointer p-0" variant="link">
         <svg
           className="h-6 w-6 text-primary hover:text-primary/70 dark:text-bright dark:hover:text-bright/70"
           fill="none"

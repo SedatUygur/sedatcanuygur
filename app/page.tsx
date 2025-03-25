@@ -47,7 +47,7 @@ export default async function Home() {
                     ))}
                     <div className="flex justify-center">
                       <Link href={"/blog"}>
-                        <Button>Read More...</Button>
+                        <Button className="cursor-pointer">Read More...</Button>
                       </Link>
                     </div>
                   </Suspense>
