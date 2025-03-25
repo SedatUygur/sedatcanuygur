@@ -3,6 +3,7 @@ import type { MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
 
 import { Aside } from "@/components/mdx/Aside";
+import { BasicDiv } from "@/components/mdx/BasicDiv";
 import { Blockquote } from "@/components/mdx/Blockquote";
 import { BlockquoteWithLink } from "./components/mdx/BlockquoteWithLink";
 import { CodeblockTitle } from "@/components/mdx/CodeblockTitle";
@@ -23,6 +24,7 @@ export const mdxComponents: MDXComponents = {
     </a>
   ),
   Aside: Aside,
+  BasicDiv: BasicDiv,
   blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
   BlockquoteWithLink: BlockquoteWithLink,
   code: ({ children }) => <InlineCodeBlock>{children}</InlineCodeBlock>,
