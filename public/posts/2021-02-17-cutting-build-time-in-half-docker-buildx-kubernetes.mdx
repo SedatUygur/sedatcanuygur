@@ -69,29 +69,6 @@ Each specified target will run in parallel as part of the build.
     "default": {
       "targets": ["vote", "result", "worker"]
     }
-  },
-  "target": {
-    "vote": {
-      "context": "./vote",
-      "tags": [
-        "<REDACTED>.dkr.ecr.us-west-2.amazonaws.com/jer-k/release-example-voting-app/vote:latest",
-        "<REDACTED>.dkr.ecr.us-west-2.amazonaws.com/jer-k/release-example-voting-app/vote:buildx-builders"
-      ]
-    },
-    "result": {
-      "context": "./result",
-      "tags": [
-        "<REDACTED>.dkr.ecr.us-west-2.amazonaws.com/jer-k/release-example-voting-app/result:latest",
-        "<REDACTED>.dkr.ecr.us-west-2.amazonaws.com/jer-k/release-example-voting-app/result:buildx-builders"
-      ]
-    },
-    "worker": {
-      "context": "./worker",
-      "tags": [
-        "<REDACTED>.dkr.ecr.us-west-2.amazonaws.com/jer-k/release-example-voting-app/worker:latest",
-        "<REDACTED>.dkr.ecr.us-west-2.amazonaws.com/jer-k/release-example-voting-app/worker:buildx-builders"
-      ]
-    }
   }
 }
 ```
