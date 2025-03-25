@@ -42,7 +42,7 @@ export default function Contact() {
               <Image
                 priority
                 alt="Contact Image"
-                className="aspect-content rounded-lg object-cover object-center"
+                className="aspect-content rounded-lg object-cover object-center opacity-75"
                 height={400}
                 src="/images/SedatCanUygur.jpg"
                 width={400}
