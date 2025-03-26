@@ -21,12 +21,9 @@ export default async function Blog({ searchParams }: BlogProps) {
   const selectedTags = searchParameters.tags
     ? searchParameters.tags.split(",")
     : [];
-  const filteredPosts =
-    selectedTags.length > 0
-      ? posts.filter((post) =>
-          post.tags.some((tag) => selectedTags.includes(tag)),
-        )
-      : posts;
+  const filteredPosts = posts.filter((post) =>
+    selectedTags.every((tag) => post.tags.includes(tag)),
+  );
   const numPages = Math.ceil(filteredPosts.length / 5);
 
   return (
