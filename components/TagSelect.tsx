@@ -76,6 +76,7 @@ export function TagSelect({ tags }: { tags: string[] }) {
           )}
           {selectedTags.length > 0 ? (
             <Button
+              asChild
               className="p-0"
               variant="ghost"
               size="sm"
