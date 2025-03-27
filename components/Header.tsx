@@ -22,7 +22,7 @@ export function Header() {
             <HighlightedLink label="About" href="/about" />
             <HighlightedLink label="Blog" href="/blog" />
             <HighlightedLink label="CV" href="/cv" />
-            <HighlightedLink label="Open Source" href="/open-source" />
+            <HighlightedLink label="Repositories" href="/open-source" />
             <HighlightedLink label="Contact" href="/contact" />
             <div className="flex flex-row items-center space-x-2">
               <GitHubButton
@@ -72,8 +72,8 @@ export function Header() {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link aria-label="Open Source" href="/open-source">
-                Open Source
+              <Link aria-label="Repositories" href="/open-source">
+                Repositories
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>

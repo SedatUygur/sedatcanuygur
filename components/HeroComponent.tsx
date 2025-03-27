@@ -35,8 +35,8 @@ export function HeroComponent() {
           <HeroCard title="Blog" description="My blog posts" href="/blog" />
           <HeroCard title="CV" description="My CV" href="/cv" />
           <HeroCard
-            title="Open Source"
-            description="Open source contributions"
+            title="GitHub"
+            description="GitHub repositories"
             href="/open-source"
           />
         </div>

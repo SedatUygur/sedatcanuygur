@@ -4,22 +4,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://sedatcanuygur.vercel.app/open-source",
   },
-  title: "Open Source",
-  description: "My open source contributions",
+  title: "Repositories",
+  description: "My GitHub repositories",
   metadataBase: new URL("https://sedatcanuygur.vercel.app"),
   openGraph: {
-    title: "Open Source - Sedat Can Uygur",
-    description: "My open source contributions",
+    title: "Repositories - Sedat Can Uygur",
+    description: "My GitHub repositories",
     url: "https://sedatcanuygur.vercel.app/open-source",
     siteName: "Sedat Can Uygur's personal website",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/api/og?title=Open Source",
+        url: "/api/og?title=Repositories",
         width: 960,
         height: 540,
-        alt: "Open Source page",
+        alt: "Repositories page",
         type: "image/png",
       },
     ],
