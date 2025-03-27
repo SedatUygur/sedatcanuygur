@@ -46,7 +46,7 @@ export default async function OpenSourcePage({
           <ul>
             {repos.slice(start, start + 10).map((repo) => (
               <li key={repo.id} className="mb-4">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
+                <div className="border-l-4 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl hover:scale-101">
                   <a
                     href={repo.html_url}
                     target="_blank"
