@@ -57,12 +57,12 @@ export default function Contact() {
               <ContactForm />
             </div>
           </div>
-          <div className="flex space-x-4">
-            <XButton href={"https://x.com/@_SedatUygur"} />
+          <div className="flex mt-4 space-x-4">
+            <GitHubButton href={"https://github.com/SedatUygur"} />
             <LinkedInButton
               href={"https://www.linkedin.com/in/sedat-can-uygur"}
             />
-            <GitHubButton href={"https://github.com/SedatUygur"} />
+            <XButton href={"https://x.com/@_SedatUygur"} />
           </div>
         </div>
       </main>

@@ -82,7 +82,7 @@ export default function CvPage() {
             companyName="Freelance"
             companyUrl="https://www.linkedin.com/in/sedat-can-uygur"
             workType="Remote"
-            duration="September, 2023 - Current"
+            duration="09.2023 - Current"
             title="Senior Software Engineer"
             description={
               <ul className="list-disc ps-4">
@@ -106,7 +106,7 @@ export default function CvPage() {
             companyName="feature/mind"
             companyUrl="https://featuremind.com"
             workType="Remote"
-            duration="October, 2021 - June, 2023"
+            duration="10.2021 - 06.2023"
             title="Senior Software Engineer"
             description={
               <ul className="list-disc ps-4">
@@ -128,8 +128,8 @@ export default function CvPage() {
           <ExperienceCard
             companyName="Vodafone"
             companyUrl="https://www.vodafone.com.tr"
-            workType="On-Site & Remote"
-            duration="March, 2020 - September, 2021"
+            workType="Remote"
+            duration="03.2020 - 09.2021"
             title="Senior Software Engineer"
             description={
               <ul className="list-disc ps-4">
@@ -147,8 +147,8 @@ export default function CvPage() {
           <ExperienceCard
             companyName="Kuzey Pharma"
             companyUrl="https://www.kuzeypharma.com"
-            workType="On-Site"
-            duration="March, 2017 - February, 2020"
+            workType="Onsite"
+            duration="03.2017 - 02.2020"
             title="Software Engineer"
             description={
               <ul className="list-disc ps-4">
@@ -166,8 +166,8 @@ export default function CvPage() {
           <ExperienceCard
             companyName="Kreatif"
             companyUrl="https://www.kreatif.net"
-            workType="On-Site"
-            duration="December, 2015 - January, 2017"
+            workType="Onsite"
+            duration="12.2015 - 01.2017"
             title="Software Engineer"
             description={
               <ul className="list-disc ps-4">
@@ -206,7 +206,7 @@ export default function CvPage() {
                   </a>
                 </h3>
                 <div className="text-sm tabular-nums text-gray-500">
-                  September, 2010 - June, 2015
+                  09.2010 - 06.2015
                 </div>
               </div>
             </CardHeader>

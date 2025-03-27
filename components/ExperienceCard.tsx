@@ -14,7 +14,7 @@ type Props = {
   description: ReactElement;
   duration: string;
   title: string | ReactElement;
-  workType: "On-Site" | "Remote" | "Hybrid" | "On-Site & Remote";
+  workType: "Onsite" | "Remote" | "Hybrid";
 };
 
 export function ExperienceCard({
