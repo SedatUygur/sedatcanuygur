@@ -45,9 +45,9 @@ export default function About() {
           <Image
             src="/images/SedatCanUygur.jpg"
             alt="avatar"
-            width={192}
-            height={192}
-            className="h-36 w-36 rounded-full"
+            width={256}
+            height={256}
+            className="h-48 w-48 rounded-full"
           />
           <h3 className="pt-4 pb-2 text-2xl leading-8 font-bold tracking-tight">
             Sedat Can Uygur
@@ -56,8 +56,10 @@ export default function About() {
             Freelance Senior Software Engineer
           </div>
           <div className="flex space-x-3 pt-6">
-            {/* <SocialIcon kind="mail" href={`mailto:${email}`} /> */}
-            <a className="p-2" href="mailto:sedat.uygur@outlook.com">
+            <a
+              className="hover:text-primary/70 dark:text-bright dark:hover:text-bright/70 pt-[6px] hover:underline"
+              href="mailto:sedat.uygur@outlook.com"
+            >
               <Mail />
             </a>
             <GitHubButton href={'https://github.com/SedatUygur'} />
@@ -95,13 +97,13 @@ export default function About() {
             and version control systems such as Git and BitBucket.
           </p>
           <p>
-            From designing RESTful and SOAP services to optimizing SQL queries
-            in Oracle and SQL Server, I’m passionate about creating efficient,
-            high-performing applications.
+            From designing RESTful and GraphQL services to optimizing SQL
+            queries in PostgreSQL, MySQL and NoSQL, I’m passionate about
+            creating efficient, high-performing applications.
           </p>
           <p>
             I enjoy following Agile methodologies (Scrum, Kanban) and applying
-            TDD/BDD principles to improve software quality.
+            multiple design principles to improve software quality.
           </p>
           <p>
             Ultimately, my goal is to deliver innovative solutions that align

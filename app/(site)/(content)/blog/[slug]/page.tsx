@@ -69,7 +69,7 @@ export async function generateStaticParams() {
  * A page that displays a single blog post given by the slug in the URL params.
  *
  * @example
- * // URL: http://localhost:3000/blog/hello-world
+ * // URL: https://sedatcanuygur.vercel.app/blog/hello-world
  * <BlogPost params={{ slug: "hello-world" }} />
  *
  * @param {BlogPostPageParams} params - The props given to the page component.

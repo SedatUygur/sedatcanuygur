@@ -24,7 +24,7 @@ type ProcessContactFormResponse = {
  */
 
 export function sendEmail(data: ContactSchemaValues) {
-  const apiEndpoint = 'http://localhost:3000/api/email';
+  const apiEndpoint = `${process.env.NEXT_PUBLIC_BASE_URL}/api/email`;
 
   const postEmail = fetch(apiEndpoint, {
     method: 'POST',

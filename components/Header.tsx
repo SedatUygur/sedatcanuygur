@@ -28,10 +28,10 @@ export function Header() {
               <GitHubButton
                 href={'https://github.com/SedatUygur/sedatcanuygur'}
               />
-              <XButton href={'https://x.com/@_SedatUygur'} />
               <LinkedInButton
                 href={'https://www.linkedin.com/in/sedat-can-uygur'}
               />
+              <XButton href={'https://x.com/@_SedatUygur'} />
               <ModeToggle />
             </div>
           </div>
