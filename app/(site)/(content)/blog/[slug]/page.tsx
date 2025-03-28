@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
-import { fetchMDXPosts, fetchPost, postComponents } from "@/lib/FetchPosts";
+import { fetchMDXPosts, fetchPost, postComponents } from '@/lib/FetchPosts';
 
 type BlogPostPageParams = {
   params: { slug: string };
@@ -26,7 +26,7 @@ export async function generateMetadata({
         canonical: `https://sedatcanuygur.vercel.app/blog/${slug}`,
       },
       description: post.description,
-      metadataBase: new URL("https://sedatcanuygur.vercel.app"),
+      metadataBase: new URL('https://sedatcanuygur.vercel.app'),
       title: post.title,
       openGraph: {
         url: `/blog/${slug}`,
@@ -39,15 +39,15 @@ export async function generateMetadata({
             width: 960,
             height: 540,
             alt: `Blog post: ${post.title}`,
-            type: "image/png",
+            type: 'image/png',
           },
         ],
       },
     };
   }
   return {
-    title: "Not Found",
-    description: "The resource you were looking for does not exist",
+    title: 'Not Found',
+    description: 'The resource you were looking for does not exist',
   };
 }
 

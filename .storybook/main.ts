@@ -1,25 +1,25 @@
-import type { StorybookConfig } from "@storybook/nextjs";
-import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import type { StorybookConfig } from '@storybook/nextjs';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const config: StorybookConfig = {
   stories: [
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    '../stories/**/*.mdx',
+    '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
-    "@storybook/addon-essentials",
-    "@storybook/addon-onboarding",
-    "@chromatic-com/storybook",
-    "@storybook/experimental-addon-test",
+    '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@chromatic-com/storybook',
+    '@storybook/experimental-addon-test',
   ],
   docs: {
-    autodocs: "tag",
+    autodocs: 'tag',
   },
   framework: {
-    name: "@storybook/nextjs",
+    name: '@storybook/nextjs',
     options: {},
   },
-  staticDirs: ["..\\public"],
+  staticDirs: ['..\\public'],
   /**
    * Configure webpack to resolve modules according to tsconfig.json.
    *

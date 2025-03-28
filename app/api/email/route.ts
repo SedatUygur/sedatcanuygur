@@ -1,6 +1,6 @@
-import { type NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-import Mail from "nodemailer/lib/mailer";
+import { type NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+import Mail from 'nodemailer/lib/mailer';
 
 /**
  * Handles POST requests to send an email using the provided request data.
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
   const { emailAddress, fullName, message } = await request.json();
 
   const transport = nodemailer.createTransport({
-    service: "gmail",
+    service: 'gmail',
     auth: {
       user: process.env.MY_EMAIL,
       pass: process.env.MY_PASSWORD,
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     new Promise<string>((resolve, reject) => {
       transport.sendMail(mailOptions, function (err: Error | null) {
         if (!err) {
-          resolve("Email sent");
+          resolve('Email sent');
         } else {
           reject(err.message);
         }
@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: "Email sent", status: 200 });
+    return NextResponse.json({ message: 'Email sent', status: 200 });
   } catch (err) {
     return NextResponse.json({ error: err, status: 500 });
   }

@@ -1,22 +1,22 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { ModeToggle } from "@/components/ModeToggle";
+import { ModeToggle } from '@/components/ModeToggle';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/DropdownMenu";
-import { GitHubButton } from "@/components/ui/GitHubButton";
-import { LinkedInButton } from "@/components/ui/LinkedInButton";
-import { XButton } from "@/components/ui/XButton";
-import { HighlightedLink } from "@/components/ui/HighlightedLink";
+} from '@/components/ui/DropdownMenu';
+import { GitHubButton } from '@/components/ui/GitHubButton';
+import { LinkedInButton } from '@/components/ui/LinkedInButton';
+import { XButton } from '@/components/ui/XButton';
+import { HighlightedLink } from '@/components/ui/HighlightedLink';
 
 export function Header() {
   return (
-    <header className="mb-4 border-b border-primary dark:border-bright">
-      <div className="hidden md:flex h-full flex-row px-4 md:px-16">
-        <div className="flex flex-row items-center justify-between px-0 w-full">
+    <header className="border-primary dark:border-bright mb-4 border-b">
+      <div className="hidden h-full flex-row px-4 md:flex md:px-16">
+        <div className="flex w-full flex-row items-center justify-between px-0">
           <HighlightedLink label="Home" href="/" />
           <div className="flex flex-row items-center space-x-4">
             <HighlightedLink label="About" href="/about" />
@@ -26,21 +26,21 @@ export function Header() {
             <HighlightedLink label="Contact" href="/contact" />
             <div className="flex flex-row items-center space-x-2">
               <GitHubButton
-                href={"https://github.com/SedatUygur/sedatcanuygur"}
+                href={'https://github.com/SedatUygur/sedatcanuygur'}
               />
-              <XButton href={"https://x.com/@_SedatUygur"} />
+              <XButton href={'https://x.com/@_SedatUygur'} />
               <LinkedInButton
-                href={"https://www.linkedin.com/in/sedat-can-uygur"}
+                href={'https://www.linkedin.com/in/sedat-can-uygur'}
               />
               <ModeToggle />
             </div>
           </div>
         </div>
       </div>
-      <div className="md:hidden flex px-4 md:px-16">
+      <div className="flex px-4 md:hidden md:px-16">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400">
+            <button className="text-gray-800 hover:text-gray-600 focus:text-gray-600 focus:outline-none dark:text-gray-200 dark:hover:text-gray-400 dark:focus:text-gray-400">
               <svg className="h-7 w-7 fill-current" viewBox="0 0 24 24">
                 <path
                   clipRule="evenodd"

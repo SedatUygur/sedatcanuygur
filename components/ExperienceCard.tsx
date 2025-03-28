@@ -1,12 +1,12 @@
-import type { ReactElement } from "react";
+import type { ReactElement } from 'react';
 
-import { Badge } from "@/components/ui/Badge";
+import { Badge } from '@/components/ui/Badge';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/components/ui/Card";
+} from '@/components/ui/Card';
 
 type Props = {
   companyName: string;
@@ -14,7 +14,7 @@ type Props = {
   description: ReactElement;
   duration: string;
   title: string | ReactElement;
-  workType: "Onsite" | "Remote" | "Hybrid";
+  workType: 'Onsite' | 'Remote' | 'Hybrid';
 };
 
 export function ExperienceCard({
@@ -29,10 +29,10 @@ export function ExperienceCard({
     <Card className="bg-white py-4">
       <CardHeader className="py-0">
         <div className="flex items-center justify-between gap-x-2 text-base">
-          <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+          <h3 className="inline-flex items-center justify-center gap-x-1 leading-none font-semibold">
             {companyUrl ? (
               <a
-                className="text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                className="text-blue-600 visited:text-purple-600 hover:text-blue-800"
                 href={companyUrl}
               >
                 {companyName}
@@ -46,15 +46,15 @@ export function ExperienceCard({
               </Badge>
             </span>
           </h3>
-          <div className="text-sm tabular-nums text-gray-500">{duration}</div>
+          <div className="text-sm text-gray-500 tabular-nums">{duration}</div>
         </div>
         <div className="flex items-center justify-between gap-x-2 text-base">
           <h4 className="font-mono text-sm leading-none">{title}</h4>
         </div>
       </CardHeader>
-      <CardContent className="py-0 mt-2 text-sm">{description}</CardContent>
-      <CardFooter className="py-0 mt-2 print:hidden">
-        <div className="flex items-center justify-end w-full"></div>
+      <CardContent className="mt-2 py-0 text-sm">{description}</CardContent>
+      <CardFooter className="mt-2 py-0 print:hidden">
+        <div className="flex w-full items-center justify-end"></div>
       </CardFooter>
     </Card>
   );

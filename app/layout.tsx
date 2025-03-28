@@ -1,55 +1,55 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
 
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import "./globals.css";
+import './globals.css';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
   alternates: {
     canonical: `https://sedatcanuygur.vercel.app`,
   },
-  description: "Sedat Can Uygur | My personal website",
+  description: 'Sedat Can Uygur | My personal website',
   icons: {
-    shortcut: "./favicon.ico",
+    shortcut: './favicon.ico',
   },
-  metadataBase: new URL("https://sedatcanuygur.vercel.app"),
+  metadataBase: new URL('https://sedatcanuygur.vercel.app'),
   openGraph: {
-    description: "Senior Software Engineer",
+    description: 'Senior Software Engineer',
     images: [
       {
         url: `/api/og??title=${encodeURIComponent("Sedat Can Uygur's personal website")}`,
         width: 960,
         height: 540,
         alt: "Sedat Can Uygur's personal website",
-        type: "image/png",
+        type: 'image/png',
       },
     ],
-    locale: "en_US",
+    locale: 'en_US',
     siteName: "Sedat Can Uygur's personal website",
-    title: "Sedat Can Uygur",
-    type: "website",
-    url: "https://sedatcanuygur.vercel.app",
+    title: 'Sedat Can Uygur',
+    type: 'website',
+    url: 'https://sedatcanuygur.vercel.app',
   },
   title: {
-    default: "Sedat Can Uygur",
-    template: "%s | Sedat Can Uygur",
+    default: 'Sedat Can Uygur',
+    template: '%s | Sedat Can Uygur',
   },
   twitter: {
-    card: "summary_large_image",
-    creator: "@_SedatUygur",
-    title: "Sedat Can Uygur",
+    card: 'summary_large_image',
+    creator: '@_SedatUygur',
+    title: 'Sedat Can Uygur',
   },
 };
 

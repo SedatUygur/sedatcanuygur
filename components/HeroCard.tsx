@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/Card";
+} from '@/components/ui/Card';
 
 type Props = {
   description: string | React.ReactElement;
@@ -21,7 +21,7 @@ export function HeroCard({
   externalLink = false,
 }: Props) {
   const card = (
-    <Card className="w-full shadow-lg hover:shadow-xl hover:scale-101">
+    <Card className="w-full shadow-lg hover:scale-101 hover:shadow-xl">
       <CardHeader className="p-4">
         <CardTitle className="text-primary dark:text-bright">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

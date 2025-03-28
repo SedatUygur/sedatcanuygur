@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import {
   Form,
@@ -11,18 +11,18 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/Form";
-import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
-import { Button } from "@/components/ui/Button";
-import { useToast } from "@/components/ui/UseToast";
+} from '@/components/ui/Form';
+import { Input } from '@/components/ui/Input';
+import { Textarea } from '@/components/ui/Textarea';
+import { Button } from '@/components/ui/Button';
+import { useToast } from '@/components/ui/UseToast';
 
-import { processContactForm } from "@/lib/SendEmail";
+import { processContactForm } from '@/lib/SendEmail';
 
 import {
   ContactSchemaValues,
   contactSchema,
-} from "@/lib/schemas/ContactFormSchema";
+} from '@/lib/schemas/ContactFormSchema';
 
 export function ContactForm() {
   const { toast } = useToast();
@@ -30,9 +30,9 @@ export function ContactForm() {
   const form = useForm<ContactSchemaValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      fullName: "",
-      emailAddress: "",
-      message: "",
+      fullName: '',
+      emailAddress: '',
+      message: '',
     },
   });
   const {
@@ -54,13 +54,13 @@ export function ContactForm() {
     ) {
       //if (result && result.status === 200) {
       toast({
-        description: "Email sent successfully!",
+        description: 'Email sent successfully!',
       });
       reset();
     } else {
       if (
         contactFormResult &&
-        "formErrors" in contactFormResult &&
+        'formErrors' in contactFormResult &&
         contactFormResult.formErrors
       ) {
         const keys = Object.keys(contactFormResult.formErrors) as Array<
@@ -74,9 +74,9 @@ export function ContactForm() {
         });
       }
       toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem sending your email.",
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: 'There was a problem sending your email.',
       });
     }
   };

@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import { Check, Search, X } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
-import * as React from "react";
+import { Check, Search, X } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import * as React from 'react';
 
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
 import {
   Command,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/ui/Command";
+} from '@/components/ui/Command';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/Popover";
-import { wrapClassNames } from "@/lib/utils";
+} from '@/components/ui/Popover';
+import { wrapClassNames } from '@/lib/utils';
 
 export function TagSelect({ tags }: { tags: string[] }) {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const selectedTags = searchParams.get("tags")?.split(",") || [];
+  const selectedTags = searchParams.get('tags')?.split(',') || [];
 
   const clearTags = () => {
     updateUrl([]);
@@ -42,12 +42,12 @@ export function TagSelect({ tags }: { tags: string[] }) {
     const params = new URLSearchParams(searchParams);
 
     if (newTags.length > 0) {
-      params.set("tags", newTags.join(","));
+      params.set('tags', newTags.join(','));
     } else {
-      params.delete("tags");
+      params.delete('tags');
     }
 
-    params.delete("page"); // reset pagination when changing tags
+    params.delete('page'); // reset pagination when changing tags
 
     router.push(`/blog?${params.toString()}`);
   };
@@ -59,11 +59,11 @@ export function TagSelect({ tags }: { tags: string[] }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between h-auto min-h-[2.5rem] py-2"
+          className="h-auto min-h-[2.5rem] w-full justify-between py-2"
         >
           {selectedTags.length > 0 ? (
             <>
-              <div className="flex flex-wrap gap-1 max-h-[4.5rem] overflow-y-auto pr-2 w-full">
+              <div className="flex max-h-[4.5rem] w-full flex-wrap gap-1 overflow-y-auto pr-2">
                 {selectedTags.map((tag) => (
                   <Badge key={tag} variant="secondary" className="text-xs">
                     {tag}
@@ -93,7 +93,7 @@ export function TagSelect({ tags }: { tags: string[] }) {
         <Command>
           <CommandInput placeholder="Search tags..." />
           <CommandGroup className="p-2">
-            <div className="grid grid-cols-3 gap-2 max-h-96 overflow-scroll">
+            <div className="grid max-h-96 grid-cols-3 gap-2 overflow-scroll">
               {tags.map((tag) => (
                 <CommandItem
                   key={tag}
@@ -102,8 +102,8 @@ export function TagSelect({ tags }: { tags: string[] }) {
                 >
                   <Check
                     className={wrapClassNames(
-                      "mr-1 h-3 w-3",
-                      selectedTags.includes(tag) ? "opacity-100" : "opacity-0",
+                      'mr-1 h-3 w-3',
+                      selectedTags.includes(tag) ? 'opacity-100' : 'opacity-0',
                     )}
                   />
                   <span className="truncate">{tag}</span>

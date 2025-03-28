@@ -5,11 +5,11 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/Pagination";
+} from '@/components/ui/Pagination';
 
 function previousLink(path: string, page: number) {
   if (page === 1) {
-    return "";
+    return '';
   }
 
   if (page === 2) {
@@ -25,7 +25,7 @@ function nextLink(path: string, numPages: number, page: number) {
   }
 
   if (page === numPages) {
-    return "";
+    return '';
   }
   return `${path}/?page=${page + 1}`;
 }

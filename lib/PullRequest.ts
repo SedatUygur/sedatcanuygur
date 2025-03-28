@@ -1,8 +1,8 @@
 // import "server-only";
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { Octokit } from "@octokit/core";
-import { paginateGraphQL } from "@octokit/plugin-paginate-graphql";
+import { Octokit } from '@octokit/core';
+import { paginateGraphQL } from '@octokit/plugin-paginate-graphql';
 
 const MyOctokit = Octokit.plugin(paginateGraphQL);
 

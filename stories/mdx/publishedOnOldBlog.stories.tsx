@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
+import { PublishedOnOldBlog } from '@/components/mdx/PublishedOnOldBlog';
 
 const meta = {
   component: PublishedOnOldBlog,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "MDX/PublishedOnOldBlog",
+  tags: ['autodocs'],
+  title: 'MDX/PublishedOnOldBlog',
 } satisfies Meta<typeof PublishedOnOldBlog>;
 
 const Template: StoryFn<typeof PublishedOnOldBlog> = () => (

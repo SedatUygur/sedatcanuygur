@@ -1,5 +1,5 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 /**
  * A wrapper around tailwind-merge and clsx to provide a similar API to
@@ -10,5 +10,5 @@ import { twMerge } from "tailwind-merge"
  */
 
 export function wrapClassNames(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }

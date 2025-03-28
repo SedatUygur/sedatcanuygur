@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { H2AndAnchor } from "@/components/mdx/H2AndAnchor";
+import { H2AndAnchor } from '@/components/mdx/H2AndAnchor';
 
 const meta = {
-  title: "MDX/H2AndAnchor",
+  title: 'MDX/H2AndAnchor',
   component: H2AndAnchor,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof H2AndAnchor>;
 
 const Template: StoryFn<typeof H2AndAnchor> = () => (

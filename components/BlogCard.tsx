@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { ExternalLinkIcon } from "lucide-react";
+import Link from 'next/link';
+import { ExternalLinkIcon } from 'lucide-react';
 
-import { Badge } from "@/components/ui/Badge";
+import { Badge } from '@/components/ui/Badge';
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/Card";
+} from '@/components/ui/Card';
 
-import { Post } from "@/lib/types";
+import { Post } from '@/lib/types';
 
 type BlogCardProps = {
   post: Post;
@@ -30,8 +30,8 @@ export function BlogCard({ post }: BlogCardProps) {
 
   const cardFooter = externalLink ? (
     <CardFooter className="pt-2 pb-6">
-      <div className="flex flex-row items-center justify-between w-full">
-        <div className="flex flex-row space-x-2 items-center ">
+      <div className="flex w-full flex-row items-center justify-between">
+        <div className="flex flex-row items-center space-x-2">
           <p>{host}</p>
           <ExternalLinkIcon className="h-4 w-4" />
         </div>
@@ -40,11 +40,11 @@ export function BlogCard({ post }: BlogCardProps) {
     </CardFooter>
   ) : (
     <CardFooter className="pt-2 pb-6">
-      <div className="flex flex-col gap-2 w-full">
-        <div className="flex flex-row items-center justify-end w-full">
+      <div className="flex w-full flex-col gap-2">
+        <div className="flex w-full flex-row items-center justify-end">
           <div className="flex text-xs">{post.date}</div>
         </div>
-        <div className="flex flex-row items-center justify-end gap-2 w-full">
+        <div className="flex w-full flex-row items-center justify-end gap-2">
           {post.tags &&
             post.tags.map((tag) => (
               <Badge variant="secondary" key={tag}>
@@ -57,7 +57,7 @@ export function BlogCard({ post }: BlogCardProps) {
   );
 
   const card = (
-    <Card className="shadow-lg hover:shadow-xl hover:scale-101">
+    <Card className="shadow-lg hover:scale-101 hover:shadow-xl">
       <CardHeader className="pb-0">
         <CardTitle className="text-primary dark:text-bright">
           {post.title}

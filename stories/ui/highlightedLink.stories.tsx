@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { HighlightedLink } from "@/components/ui/HighlightedLink";
+import { HighlightedLink } from '@/components/ui/HighlightedLink';
 
 const meta = {
   component: HighlightedLink,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "HighlightedLink",
+  tags: ['autodocs'],
+  title: 'HighlightedLink',
 } satisfies Meta<typeof HighlightedLink>;
 
 const Template: StoryFn<typeof HighlightedLink> = ({ href, label }) => (
@@ -22,7 +22,7 @@ export default meta;
 export const Primary: Story = {
   render: Template,
   args: {
-    href: "/storybook",
-    label: "Storybook",
+    href: '/storybook',
+    label: 'Storybook',
   },
 };

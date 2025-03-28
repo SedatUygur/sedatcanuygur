@@ -1,27 +1,27 @@
-import type { Metadata } from "next";
-import { ReactNode } from "react";
+import type { Metadata } from 'next';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://sedatcanuygur.vercel.app/blog",
+    canonical: 'https://sedatcanuygur.vercel.app/blog',
   },
-  description: "My blog posts",
-  metadataBase: new URL("https://sedatcanuygur.vercel.app"),
-  title: "Blog",
+  description: 'My blog posts',
+  metadataBase: new URL('https://sedatcanuygur.vercel.app'),
+  title: 'Blog',
   openGraph: {
-    title: "Blog - Sedat Can Uygur",
-    description: "My blog posts",
-    url: "https://sedatcanuygur.vercel.app/blog",
+    title: 'Blog - Sedat Can Uygur',
+    description: 'My blog posts',
+    url: 'https://sedatcanuygur.vercel.app/blog',
     siteName: "Sedat Can Uygur's personal website",
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
-        url: "/api/og?title=Blog",
+        url: '/api/og?title=Blog',
         width: 960,
         height: 540,
-        alt: "Blog page",
-        type: "image/png",
+        alt: 'Blog page',
+        type: 'image/png',
       },
     ],
   },

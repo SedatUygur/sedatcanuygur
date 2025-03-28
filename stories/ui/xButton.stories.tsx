@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { XButton } from "@/components/ui/XButton";
+import { XButton } from '@/components/ui/XButton';
 
 const meta = {
   component: XButton,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "XButton",
+  tags: ['autodocs'],
+  title: 'XButton',
 } satisfies Meta<typeof XButton>;
 
 const Template: StoryFn<typeof XButton> = ({ href }) => <XButton href={href} />;
@@ -20,6 +20,6 @@ export default meta;
 export const Primary: Story = {
   render: Template,
   args: {
-    href: "https://x.com/@_SedatUygur",
+    href: 'https://x.com/@_SedatUygur',
   },
 };

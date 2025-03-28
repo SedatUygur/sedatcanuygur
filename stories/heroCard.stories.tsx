@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { HeroCard } from "@/components/HeroCard";
+import { HeroCard } from '@/components/HeroCard';
 
 const meta = {
   component: HeroCard,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "HeroCard",
+  tags: ['autodocs'],
+  title: 'HeroCard',
 } satisfies Meta<typeof HeroCard>;
 
 const Template: StoryFn<typeof HeroCard> = ({
@@ -32,9 +32,9 @@ export default meta;
 export const Primary: Story = {
   render: Template,
   args: {
-    title: "Storybook Hero Card",
-    description: "This is a story",
-    href: "/storybook",
+    title: 'Storybook Hero Card',
+    description: 'This is a story',
+    href: '/storybook',
     externalLink: false,
   },
 };
@@ -42,9 +42,9 @@ export const Primary: Story = {
 export const ExternalHeroCard: Story = {
   render: Template,
   args: {
-    title: "Storybook Hero Card",
-    description: "This is a story",
-    href: "/storybook",
+    title: 'Storybook Hero Card',
+    description: 'This is a story',
+    href: '/storybook',
     externalLink: true,
   },
 };

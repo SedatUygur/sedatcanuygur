@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { ModeToggle } from "@/components/ModeToggle";
+import { ModeToggle } from '@/components/ModeToggle';
 
 const meta = {
   component: ModeToggle,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "ModeToggle",
+  tags: ['autodocs'],
+  title: 'ModeToggle',
 } satisfies Meta<typeof ModeToggle>;
 
 const Template: StoryFn<typeof ModeToggle> = () => <ModeToggle />;

@@ -1,6 +1,6 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next';
 
-import { fetchMDXPosts } from "@/lib/FetchPosts";
+import { fetchMDXPosts } from '@/lib/FetchPosts';
 
 /**
  * Generates the sitemap for the blog.
@@ -15,10 +15,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: post.updated || post.date,
   }));
 
-  const routes = ["", "/blog", "/contact", "/cv", "open-source"].map(
+  const routes = ['', '/blog', '/contact', '/cv', 'open-source'].map(
     (route) => ({
       url: `https://sedatcanuygur.vercel.app${route}`,
-      lastModified: new Date().toISOString().split("T")[0],
+      lastModified: new Date().toISOString().split('T')[0],
     }),
   );
 

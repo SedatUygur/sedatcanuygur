@@ -1,10 +1,10 @@
-"use server";
+'use server';
 
-import { Email, emails } from "@/db/schema";
-import { db } from "@/db";
-import { ParseDatabaseErrorResult } from "@/lib/db/ParseError";
+import { Email, emails } from '@/db/schema';
+import { db } from '@/db';
+import { ParseDatabaseErrorResult } from '@/lib/db/ParseError';
 
-type InsertEmailProps = Pick<Email, "emailAddress" | "fullName" | "message">;
+type InsertEmailProps = Pick<Email, 'emailAddress' | 'fullName' | 'message'>;
 
 type InsertEmailResponse = {
   errorMessage?: string;
@@ -30,7 +30,7 @@ export async function insertEmail(
     if (error) {
       throw error;
     } else {
-      return { errorMessage: "Unknown Error" };
+      return { errorMessage: 'Unknown Error' };
     }
   }
 }

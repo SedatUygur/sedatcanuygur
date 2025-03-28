@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { ExperienceCard } from "@/components/ExperienceCard";
+import { ExperienceCard } from '@/components/ExperienceCard';
 
 const meta = {
-  title: "ExperienceCard",
+  title: 'ExperienceCard',
   component: ExperienceCard,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ExperienceCard>;
 
 export default meta;
@@ -28,11 +28,11 @@ const Template: StoryFn<typeof ExperienceCard> = (args) => (
 export const Primary: Story = {
   render: Template,
   args: {
-    companyName: "Freelance",
-    companyUrl: "https://sedatcanuygur.vercel.app/storybook/",
-    workType: "Remote",
-    duration: "Present",
-    title: "Senior Software Engineer",
+    companyName: 'Freelance',
+    companyUrl: 'https://sedatcanuygur.vercel.app/storybook/',
+    workType: 'Remote',
+    duration: 'Present',
+    title: 'Senior Software Engineer',
     description: (
       <ul className="list-disc ps-4">
         <li>

@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren } from 'react';
 
 /**
  * Renders an inline code block with Solarized Light or Dark theme depending on
@@ -10,10 +10,7 @@ import type { PropsWithChildren } from "react";
 
 export function InlineCodeBlock({ children }: PropsWithChildren) {
   return (
-    <code
-      className="not-prose font-mono text-sm text-solaralizedlight-foreground bg-solaralizedlight
-      dark:text-solaralizeddark-foreground dark:bg-solaralizeddark rounded-md px-1.5 py-1"
-    >
+    <code className="not-prose text-solaralizedlight-foreground bg-solaralizedlight dark:text-solaralizeddark-foreground dark:bg-solaralizeddark rounded-md px-1.5 py-1 font-mono text-sm">
       {children}
     </code>
   );

@@ -1,8 +1,8 @@
-import dayjs from "dayjs";
-import { GitMerge } from "lucide-react";
+import dayjs from 'dayjs';
+import { GitMerge } from 'lucide-react';
 
-import { Card, CardContent, CardTitle } from "@/components/ui/Card";
-import type { PullRequest } from "@/lib/PullRequest";
+import { Card, CardContent, CardTitle } from '@/components/ui/Card';
+import type { PullRequest } from '@/lib/PullRequest';
 
 type PullRequestCardProps = {
   pullRequest: PullRequest;
@@ -23,7 +23,7 @@ export function PullRequestCard({ pullRequest }: PullRequestCardProps) {
           href={pullRequest.permalink}
           target="_blank"
         />
-        <CardTitle className="flex flex-row p-6 pb-2 space-x-2">
+        <CardTitle className="flex flex-row space-x-2 p-6 pb-2">
           <GitMerge className="stroke-purple-500" />
           <div>{pullRequest.title}</div>
         </CardTitle>
@@ -33,7 +33,7 @@ export function PullRequestCard({ pullRequest }: PullRequestCardProps) {
               <div className="flex flex-row items-center space-x-1">
                 <div className="font-semibold">Repository</div>
                 <a
-                  className="text-blue-600 z-50"
+                  className="z-50 text-blue-600"
                   href={pullRequest.repository.url}
                   target="_blank"
                 >
@@ -44,7 +44,7 @@ export function PullRequestCard({ pullRequest }: PullRequestCardProps) {
                 <div className="font-semibold">#{pullRequest.number}</div>
                 <div>by</div>
                 <a
-                  className="text-blue-600 z-50"
+                  className="z-50 text-blue-600"
                   href="https://github.com/SedatUygur"
                   target="_blank"
                 >
@@ -52,12 +52,12 @@ export function PullRequestCard({ pullRequest }: PullRequestCardProps) {
                 </a>
                 <div>|</div>
                 <div className="font-semibold">
-                  {dayjs(pullRequest.createdAt).format("YYYY-MM-DD")}
+                  {dayjs(pullRequest.createdAt).format('YYYY-MM-DD')}
                 </div>
               </div>
             </div>
             {pullRequest.bodyHTML && (
-              <div className="text-sm text-muted-foreground w-full">
+              <div className="text-muted-foreground w-full text-sm">
                 <div
                   dangerouslySetInnerHTML={{ __html: pullRequest.bodyHTML }}
                 />

@@ -11,15 +11,10 @@ export function CodeblockTitle({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className="rehype-code-title pt-4 px-4 pb-0 rounded-t-md mb-0 text-sm font-normal
-			           bg-solaralizedlight-darkened dark:bg-solaralizeddark-darkened"
+      className="rehype-code-title bg-solaralizedlight-darkened dark:bg-solaralizeddark-darkened mb-0 rounded-t-md px-4 pt-4 pb-0 text-sm font-normal"
       {...props}
     >
-      <span
-        className="rehype-code-title-content relative p-1 -left-[6px] top-[6px]
-				           inline-block whitespace-nowrap overflow-x-auto max-w-full
-			             bg-solaralizedlight dark:bg-solaralizeddark"
-      >
+      <span className="rehype-code-title-content bg-solaralizedlight dark:bg-solaralizeddark relative top-[6px] -left-[6px] inline-block max-w-full overflow-x-auto p-1 whitespace-nowrap">
         {children}
       </span>
     </div>

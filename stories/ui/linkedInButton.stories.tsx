@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { LinkedInButton } from "@/components/ui/LinkedInButton";
+import { LinkedInButton } from '@/components/ui/LinkedInButton';
 
 const meta = {
   component: LinkedInButton,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "LinkedInButton",
+  tags: ['autodocs'],
+  title: 'LinkedInButton',
 } satisfies Meta<typeof LinkedInButton>;
 
 const Template: StoryFn<typeof LinkedInButton> = ({ href }) => (
@@ -22,6 +22,6 @@ export default meta;
 export const Primary: Story = {
   render: Template,
   args: {
-    href: "https://www.linkedin.com/in/sedat-can-uygur",
+    href: 'https://www.linkedin.com/in/sedat-can-uygur',
   },
 };

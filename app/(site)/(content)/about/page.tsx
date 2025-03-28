@@ -1,32 +1,32 @@
-import { Mail } from "lucide-react";
-import type { Metadata } from "next";
-import Image from "next/image";
+import { Mail } from 'lucide-react';
+import type { Metadata } from 'next';
+import Image from 'next/image';
 
-import { GitHubButton } from "@/components/ui/GitHubButton";
-import { LinkedInButton } from "@/components/ui/LinkedInButton";
-import { XButton } from "@/components/ui/XButton";
+import { GitHubButton } from '@/components/ui/GitHubButton';
+import { LinkedInButton } from '@/components/ui/LinkedInButton';
+import { XButton } from '@/components/ui/XButton';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://sedatcanuygur.vercel.app/about",
+    canonical: 'https://sedatcanuygur.vercel.app/about',
   },
-  description: "About Me",
-  metadataBase: new URL("https://sedatcanuygur.vercel.app"),
-  title: "About",
+  description: 'About Me',
+  metadataBase: new URL('https://sedatcanuygur.vercel.app'),
+  title: 'About',
   openGraph: {
-    title: "About - Sedat Can Uygur",
-    description: "About Me",
-    url: "https://sedatcanuygur.vercel.app/about",
+    title: 'About - Sedat Can Uygur',
+    description: 'About Me',
+    url: 'https://sedatcanuygur.vercel.app/about',
     siteName: "Sedat Can Uygur's personal website",
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
-        url: "/api/og?title=About",
+        url: '/api/og?title=About',
         width: 960,
         height: 540,
-        alt: "About Me page",
-        type: "image/png",
+        alt: 'About Me page',
+        type: 'image/png',
       },
     ],
   },
@@ -40,7 +40,7 @@ export default function About() {
           About
         </h1>
       </div>
-      <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+      <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:space-y-0 xl:gap-x-8">
         <div className="flex flex-col items-center space-x-2 pt-8">
           <Image
             src="/images/SedatCanUygur.jpg"
@@ -60,11 +60,11 @@ export default function About() {
             <a className="p-2" href="mailto:sedat.uygur@outlook.com">
               <Mail />
             </a>
-            <GitHubButton href={"https://github.com/SedatUygur"} />
+            <GitHubButton href={'https://github.com/SedatUygur'} />
             <LinkedInButton
-              href={"https://www.linkedin.com/in/sedat-can-uygur"}
+              href={'https://www.linkedin.com/in/sedat-can-uygur'}
             />
-            <XButton href={"https://x.com/@_SedatUygur"} />
+            <XButton href={'https://x.com/@_SedatUygur'} />
           </div>
         </div>
         <div className="prose dark:prose-invert max-w-none pt-8 pb-8 xl:col-span-2">

@@ -1,12 +1,12 @@
-import { insertEmail } from "@/app/api/db/emails";
-import { db } from "@/db";
+import { insertEmail } from '@/app/api/db/emails';
+import { db } from '@/db';
 
-jest.mock("@/db", () => ({
+jest.mock('@/db', () => ({
   db: {
     insert: jest.fn().mockReturnValue({
       values: jest.fn().mockReturnValue({
         data: {
-          id: "testemailsuccess",
+          id: 'testemailsuccess',
         },
         error: null,
       }),
@@ -14,7 +14,7 @@ jest.mock("@/db", () => ({
   },
 }));
 
-describe("insertEmail", () => {
+describe('insertEmail', () => {
   /* Skipping for now. I think I need to look into how to set up a mock database which isn't
   really something I'm interested in doing at this moment
   
@@ -35,13 +35,13 @@ describe("insertEmail", () => {
     })
   }) */
 
-  describe("when the email is inserted", () => {
-    it("returns an empty object", async () => {
+  describe('when the email is inserted', () => {
+    it('returns an empty object', async () => {
       (db.insert as jest.Mock).mockImplementationOnce(() => {
         return {
           values: jest.fn().mockReturnValueOnce({
             data: {
-              id: "testemailsuccess",
+              id: 'testemailsuccess',
             },
             error: null,
           }),
@@ -49,9 +49,9 @@ describe("insertEmail", () => {
       });
 
       const response = await insertEmail({
-        fullName: "Test Name",
-        emailAddress: "test-email@gmail.com",
-        message: "Test Message",
+        fullName: 'Test Name',
+        emailAddress: 'test-email@gmail.com',
+        message: 'Test Message',
       });
 
       expect(response).toMatchObject({});

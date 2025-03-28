@@ -1,12 +1,12 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { BlogCardSkeleton } from "@/components/skeletons/BlogCardSkeleton";
+import { BlogCardSkeleton } from '@/components/skeletons/BlogCardSkeleton';
 
 const meta = {
   component: BlogCardSkeleton,
   parameters: {},
-  tags: ["autodocs"],
-  title: "Skeletons/BlogCardSkeleton",
+  tags: ['autodocs'],
+  title: 'Skeletons/BlogCardSkeleton',
 } satisfies Meta<typeof BlogCardSkeleton>;
 
 const Template: StoryFn<typeof BlogCardSkeleton> = () => (

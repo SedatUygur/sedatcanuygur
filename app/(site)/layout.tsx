@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Toaster } from "@/components/ui/Toaster";
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { Toaster } from '@/components/ui/Toaster';
 
 export const metadata: Metadata = {
-  title: "Sedat Can Uygur",
-  description: "Sedat Can Uygur | My personal website",
+  title: 'Sedat Can Uygur',
+  description: 'Sedat Can Uygur | My personal website',
 };
 
 export default function SiteLayout({

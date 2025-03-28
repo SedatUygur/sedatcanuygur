@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/Button";
+import { Button } from '@/components/ui/Button';
 
 type Props = {
   href: string;
@@ -8,7 +8,7 @@ export function XButton({ href }: Props) {
     <a href={href} target="_blank">
       <Button className="cursor-pointer p-0" variant="link">
         <svg
-          className="h-6 w-6 text-primary hover:text-primary/70 dark:text-bright dark:hover:text-bright/70"
+          className="text-primary hover:text-primary/70 dark:text-bright dark:hover:text-bright/70 h-6 w-6"
           fill="none"
           height="24"
           stroke="currentColor"

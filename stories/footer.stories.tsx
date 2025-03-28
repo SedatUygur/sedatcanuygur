@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { Footer } from "@/components/Footer";
+import { Footer } from '@/components/Footer';
 
 const meta = {
   component: Footer,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "Footer",
+  tags: ['autodocs'],
+  title: 'Footer',
 } satisfies Meta<typeof Footer>;
 
 const Template: StoryFn<typeof Footer> = () => <Footer />;

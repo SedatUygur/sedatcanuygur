@@ -1,8 +1,8 @@
-import { insertEmail } from "@/app/api/db/emails";
+import { insertEmail } from '@/app/api/db/emails';
 import {
   contactSchema,
   ContactSchemaValues,
-} from "@/lib/schemas/ContactFormSchema";
+} from '@/lib/schemas/ContactFormSchema';
 //import { toaster } from '@/src/components/ui/toaster';
 
 type ProcessContactFormResponse = {
@@ -24,18 +24,18 @@ type ProcessContactFormResponse = {
  */
 
 export function sendEmail(data: ContactSchemaValues) {
-  const apiEndpoint = "http://localhost:3000/api/email";
+  const apiEndpoint = 'http://localhost:3000/api/email';
 
   const postEmail = fetch(apiEndpoint, {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify(data),
   });
   const getResponse = async () => {
     const response = await postEmail;
     if (response.ok && response.status === 200) {
-      return { message: "Email sent", status: 200 };
+      return { message: 'Email sent', status: 200 };
     } else {
-      return { error: "Email not sent", status: 500 };
+      return { error: 'Email not sent', status: 500 };
     }
   };
   return getResponse();
@@ -74,9 +74,9 @@ export async function processContactForm(
     const errorMap = parsedFormData.error.flatten().fieldErrors;
     return {
       formErrors: {
-        fullName: errorMap["fullName"]?.[0],
-        emailAddress: errorMap["emailAddress"]?.[0],
-        message: errorMap["message"]?.[0],
+        fullName: errorMap['fullName']?.[0],
+        emailAddress: errorMap['emailAddress']?.[0],
+        message: errorMap['message']?.[0],
       },
     };
   }

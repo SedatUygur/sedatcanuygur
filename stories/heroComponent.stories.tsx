@@ -1,12 +1,12 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { HeroComponent } from "@/components/HeroComponent";
+import { HeroComponent } from '@/components/HeroComponent';
 
 const meta = {
   component: HeroComponent,
   parameters: {},
-  tags: ["autodocs"],
-  title: "HeroComponent",
+  tags: ['autodocs'],
+  title: 'HeroComponent',
 } satisfies Meta<typeof HeroComponent>;
 
 const Template: StoryFn<typeof HeroComponent> = () => <HeroComponent />;
@@ -23,7 +23,7 @@ export const Mobile: Story = {
   render: Template,
   parameters: {
     viewport: {
-      defaultViewport: "mobile1",
+      defaultViewport: 'mobile1',
     },
   },
 };

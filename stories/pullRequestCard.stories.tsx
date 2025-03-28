@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { PullRequestCard } from "@/components/PullRequestCard";
+import { PullRequestCard } from '@/components/PullRequestCard';
 
 const meta = {
   component: PullRequestCard,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "PullRequestCard",
+  tags: ['autodocs'],
+  title: 'PullRequestCard',
 } satisfies Meta<typeof PullRequestCard>;
 
 const Template: StoryFn<typeof PullRequestCard> = ({ pullRequest }) => (
@@ -23,17 +23,17 @@ export const Primary: Story = {
   render: Template,
   args: {
     pullRequest: {
-      createdAt: "2025-03-23",
+      createdAt: '2025-03-23',
       number: 1,
-      title: "Storybook Pull Request",
-      bodyHTML: "<div>Pull Request Body</div>",
-      permalink: "/storybook",
+      title: 'Storybook Pull Request',
+      bodyHTML: '<div>Pull Request Body</div>',
+      permalink: '/storybook',
       repository: {
-        name: "sedatcanuygur",
-        nameWithOwner: "SedatUygur/sedatcanuygur",
-        url: "https://github.com/SedatUygur/sedatcanuygur",
+        name: 'sedatcanuygur',
+        nameWithOwner: 'SedatUygur/sedatcanuygur',
+        url: 'https://github.com/SedatUygur/sedatcanuygur',
         owner: {
-          login: "SedatUygur",
+          login: 'SedatUygur',
         },
       },
     },

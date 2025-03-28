@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren } from 'react';
 
 type Props = {
   id?: string;
@@ -20,7 +20,7 @@ export function H2AndAnchor({ id, children }: Props) {
       <a
         aria-label={id}
         href={`#${id}`}
-        className="p-2 italic font-bold opacity-0 group-hover:opacity-75"
+        className="p-2 font-bold italic opacity-0 group-hover:opacity-75"
       >
         #
       </a>

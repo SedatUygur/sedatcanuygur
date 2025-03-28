@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui/Skeleton";
+import { Skeleton } from '@/components/ui/Skeleton';
 
 export function BlogCardSkeleton() {
   return (
@@ -6,7 +6,7 @@ export function BlogCardSkeleton() {
       <Skeleton className="h-[75px] rounded-xl" />
       <div className="space-y-2">
         <Skeleton className="h-4" />
-        <div className="flex flex-row items-center justify-end w-full">
+        <div className="flex w-full flex-row items-center justify-end">
           <Skeleton className="h-4 w-[100px]" />
         </div>
       </div>

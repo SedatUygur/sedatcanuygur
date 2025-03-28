@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { InlineCodeBlock } from "@/components/mdx/InlineCodeBlock";
+import { InlineCodeBlock } from '@/components/mdx/InlineCodeBlock';
 
 const meta = {
   component: InlineCodeBlock,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "MDX/InlineCodeBlock",
+  tags: ['autodocs'],
+  title: 'MDX/InlineCodeBlock',
 } satisfies Meta<typeof InlineCodeBlock>;
 
 const Template: StoryFn<typeof InlineCodeBlock> = () => (

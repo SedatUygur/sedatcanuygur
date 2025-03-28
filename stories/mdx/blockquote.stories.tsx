@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { Blockquote } from "@/components/mdx/Blockquote";
+import { Blockquote } from '@/components/mdx/Blockquote';
 
 const meta = {
   component: Blockquote,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "MDX/Blockquote",
+  tags: ['autodocs'],
+  title: 'MDX/Blockquote',
 } satisfies Meta<typeof Blockquote>;
 
 const Template: StoryFn<typeof Blockquote> = () => (

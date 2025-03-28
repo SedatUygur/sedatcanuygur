@@ -1,20 +1,20 @@
-import { Code } from "bright";
-import type { MDXComponents } from "mdx/types";
-import Image, { type ImageProps } from "next/image";
+import { Code } from 'bright';
+import type { MDXComponents } from 'mdx/types';
+import Image, { type ImageProps } from 'next/image';
 
-import { Aside } from "@/components/mdx/Aside";
-import { BasicDiv } from "@/components/mdx/BasicDiv";
-import { Blockquote } from "@/components/mdx/Blockquote";
-import { BlockquoteWithLink } from "./components/mdx/BlockquoteWithLink";
-import { CodeblockTitle } from "@/components/mdx/CodeblockTitle";
-import { H2AndAnchor } from "@/components/mdx/H2AndAnchor";
-import { InlineCodeBlock } from "@/components/mdx/InlineCodeBlock";
-import { PublishedOnOldBlog } from "@/components/mdx/PublishedOnOldBlog";
+import { Aside } from '@/components/mdx/Aside';
+import { BasicDiv } from '@/components/mdx/BasicDiv';
+import { Blockquote } from '@/components/mdx/Blockquote';
+import { BlockquoteWithLink } from './components/mdx/BlockquoteWithLink';
+import { CodeblockTitle } from '@/components/mdx/CodeblockTitle';
+import { H2AndAnchor } from '@/components/mdx/H2AndAnchor';
+import { InlineCodeBlock } from '@/components/mdx/InlineCodeBlock';
+import { PublishedOnOldBlog } from '@/components/mdx/PublishedOnOldBlog';
 
 Code.theme = {
-  dark: "solarized-dark",
-  light: "solarized-light",
-  lightSelector: "html.light",
+  dark: 'solarized-dark',
+  light: 'solarized-light',
+  lightSelector: 'html.light',
 };
 
 export const mdxComponents: MDXComponents = {
@@ -38,7 +38,7 @@ export const mdxComponents: MDXComponents = {
    * @returns {JSX.Element} The rendered div or CodeblockTitle component.
    */
   div: ({ className, children, ...props }) => {
-    if (className?.includes("rehype-code-title")) {
+    if (className?.includes('rehype-code-title')) {
       return <CodeblockTitle {...props}>{children}</CodeblockTitle>;
     }
 
@@ -54,7 +54,7 @@ export const mdxComponents: MDXComponents = {
     <Image
       placeholder="blur"
       sizes="100vw"
-      style={{ width: "100%", height: "auto" }}
+      style={{ width: '100%', height: 'auto' }}
       height={450}
       width={450}
       {...(props as ImageProps)}

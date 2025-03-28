@@ -1,5 +1,5 @@
-import { Pagination } from "@/components/Pagination";
-import octokit from "@/lib/octokit";
+import { Pagination } from '@/components/Pagination';
+import octokit from '@/lib/octokit';
 
 type OpenSourceProps = {
   searchParams: {
@@ -17,11 +17,11 @@ type Repo = {
 const fetchRepos = async (): Promise<Repo[]> => {
   try {
     const { data } = await octokit.repos.listForUser({
-      username: "SedatUygur",
+      username: 'SedatUygur',
     });
     return data;
   } catch (error) {
-    console.error("Failed to fetch repositories", error);
+    console.error('Failed to fetch repositories', error);
     return [];
   }
 };
@@ -38,20 +38,20 @@ export default async function OpenSourcePage({
 
   return (
     <div className="flex flex-col items-center space-y-6">
-      <h1 className="text-primary dark:text-bright font-bold text-3xl">
+      <h1 className="text-primary dark:text-bright text-3xl font-bold">
         My GitHub Repositories
       </h1>
       <div className="prose">
-        <div className="flex flex-col space-y-6 not-prose">
+        <div className="not-prose flex flex-col space-y-6">
           <ul>
             {repos.slice(start, start + 10).map((repo) => (
               <li key={repo.id} className="mb-4">
-                <div className="border-l-4 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl hover:scale-101">
+                <div className="rounded-lg border-l-4 bg-white p-4 shadow-lg hover:scale-101 hover:shadow-xl dark:bg-gray-800">
                   <a
                     href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2"
+                    className="mb-2 text-lg font-bold text-gray-900 dark:text-gray-100"
                   >
                     {repo.name}
                   </a>

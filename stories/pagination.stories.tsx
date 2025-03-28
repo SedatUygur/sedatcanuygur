@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { Pagination } from "@/components/Pagination";
+import { Pagination } from '@/components/Pagination';
 
 const meta = {
   component: Pagination,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "Pagination",
+  tags: ['autodocs'],
+  title: 'Pagination',
 } satisfies Meta<typeof Pagination>;
 
 const Template: StoryFn<typeof Pagination> = ({ page, numPages, path }) => (
@@ -24,6 +24,6 @@ export const Primary: Story = {
   args: {
     page: 1,
     numPages: 2,
-    path: "/storybook",
+    path: '/storybook',
   },
 };

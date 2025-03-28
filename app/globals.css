@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -148,20 +148,20 @@
 
 /* Light mode styles */
 .rehype-code-title
-  + div[data-bright-theme="solarized-dark"]
-  + div[data-bright-theme="solarized-light"] {
+  + div[data-bright-theme='solarized-dark']
+  + div[data-bright-theme='solarized-light'] {
   margin: 0 !important;
   margin-bottom: 1em !important;
 }
 
 .rehype-code-title
-  + div[data-bright-theme="solarized-dark"]
-  + div[data-bright-theme="solarized-light"] {
+  + div[data-bright-theme='solarized-dark']
+  + div[data-bright-theme='solarized-light'] {
   border-radius: 0 !important;
 }
 .rehype-code-title
-  + div[data-bright-theme="solarized-dark"]
-  + div[data-bright-theme="solarized-light"]
+  + div[data-bright-theme='solarized-dark']
+  + div[data-bright-theme='solarized-light']
   pre {
   border-radius: 0 !important;
   border-bottom-left-radius: 0.375rem !important;
@@ -170,15 +170,15 @@
 }
 
 /* Dark mode styles */
-.dark .rehype-code-title + div[data-bright-theme="solarized-dark"] {
+.dark .rehype-code-title + div[data-bright-theme='solarized-dark'] {
   margin: 0 !important;
   margin-bottom: 1em !important;
 }
 
-.dark .rehype-code-title + div[data-bright-theme="solarized-dark"] {
+.dark .rehype-code-title + div[data-bright-theme='solarized-dark'] {
   border-radius: 0 !important;
 }
-.dark .rehype-code-title + div[data-bright-theme="solarized-dark"] pre {
+.dark .rehype-code-title + div[data-bright-theme='solarized-dark'] pre {
   border-radius: 0 !important;
   border-bottom-left-radius: 0.375rem !important;
   border-bottom-right-radius: 0.375rem !important;

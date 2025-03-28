@@ -1,13 +1,13 @@
-import { migrate } from "drizzle-orm/mysql2/migrator";
-import { db } from "./index";
+import { migrate } from 'drizzle-orm/mysql2/migrator';
+import { db } from './index';
 
-import "dotenv/config";
+import 'dotenv/config';
 
 const runMigrate = async () => {
-  console.log("⏳ Running migrations...");
+  console.log('⏳ Running migrations...');
 
   const start = Date.now();
-  await migrate(db, { migrationsFolder: "db/migrations" });
+  await migrate(db, { migrationsFolder: 'db/migrations' });
 
   const end = Date.now();
   console.log(`✅ Migrations completed in ${end - start}ms`);
@@ -16,7 +16,7 @@ const runMigrate = async () => {
 };
 
 runMigrate().catch((err) => {
-  console.error("❌ Migration failed");
+  console.error('❌ Migration failed');
   console.error(err);
   process.exit(1);
 });

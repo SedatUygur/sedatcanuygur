@@ -1,19 +1,19 @@
-import { GlobeIcon } from "lucide-react";
-import Link from "next/link";
+import { GlobeIcon } from 'lucide-react';
+import Link from 'next/link';
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-import { Badge } from "@/components/ui/Badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/Card";
-import { ExperienceCard } from "@/components/ExperienceCard";
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/Avatar';
+import { Badge } from '@/components/ui/Badge';
+import { Card, CardContent, CardHeader } from '@/components/ui/Card';
+import { ExperienceCard } from '@/components/ExperienceCard';
 
 export default function CvPage() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-4 md:p-16">
+    <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-4">
       <section className="mx-auto w-full max-w-2xl space-y-4 bg-white print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">Sedat Can Uygur</h1>
-            <p className="max-w-md items-center text-pretty font-mono text-sm text-muted-foreground">
+            <p className="text-muted-foreground max-w-md items-center font-mono text-sm text-pretty">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href="https://www.google.com/maps/place/Muğla,+Türkiye"
@@ -33,10 +33,10 @@ export default function CvPage() {
           </Avatar>
         </div>
         <section className="flex min-h-0 flex-col gap-y-3">
-          <Link href={"about"}>
+          <Link href={'about'}>
             <h2 className="text-xl font-bold hover:underline">About</h2>
           </Link>
-          <p className="text-pretty font-mono text-base text-muted-foreground">
+          <p className="text-muted-foreground font-mono text-base text-pretty">
             Innovative and results-driven Senior Software Engineer with over 8
             years of experience in full‑stack development, software
             architecture. Expert at designing and implementing resilient,
@@ -189,7 +189,7 @@ export default function CvPage() {
           <Card className="bg-white py-4">
             <CardHeader className="py-0">
               <div className="flex items-start justify-between gap-x-2 text-base">
-                <h3 className="flex flex-col space-y-1 font-semibold leading-none">
+                <h3 className="flex flex-col space-y-1 leading-none font-semibold">
                   <a
                     className="hover:underline"
                     href="https://mu.edu.tr/en"
@@ -205,12 +205,12 @@ export default function CvPage() {
                     Department of Computer Engineering
                   </a>
                 </h3>
-                <div className="text-sm tabular-nums text-gray-500">
+                <div className="text-sm text-gray-500 tabular-nums">
                   09.2010 - 06.2015
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="py-0 mt-2 text-xs">
+            <CardContent className="mt-2 py-0 text-xs">
               B.S. Computer Engineering
             </CardContent>
           </Card>

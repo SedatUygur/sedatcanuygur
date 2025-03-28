@@ -1,14 +1,14 @@
 ---
-date: "2025-03-22"
-description: "Steps I took to build out a blog with Next.js App Router, React Server Components and Tailwind."
+date: '2025-03-22'
+description: 'Steps I took to build out a blog with Next.js App Router, React Server Components and Tailwind.'
 draft: false
-slug: "building-a-blog-with-app-router-tailwind"
+slug: 'building-a-blog-with-app-router-tailwind'
 tags:
-  - "app-router"
-  - "next.js"
-  - "react"
-  - "tailwind"
-template: "post"
+  - 'app-router'
+  - 'next.js'
+  - 'react'
+  - 'tailwind'
+template: 'post'
 title: Building a blog with App Router, React Server Components and Tailwind
 ---
 
@@ -42,11 +42,11 @@ You can look at my [layout.tsx](<https://github.com/SedatUygur/sedatcanuygur/blo
 but the contents are shown below.
 
 ```tsx
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export default function ContentLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="md:w-full md:flex md:justify-center">
+    <div className="md:flex md:w-full md:justify-center">
       <div className="prose dark:prose-invert">{children}</div>
     </div>
   );
@@ -73,13 +73,13 @@ First up is `parseMdxFiles`.
 
 ```ts
 async function parseMdxFiles() {
-  const filePaths = await fs.readdir("./posts/");
+  const filePaths = await fs.readdir('./posts/');
 
   const postsData = [];
 
   for (const filePath of filePaths) {
     const postFilePath = `./posts/${filePath}`;
-    const postContent = await fs.readFile(postFilePath, "utf8");
+    const postContent = await fs.readFile(postFilePath, 'utf8');
     const { data } = matter(postContent);
 
     if (!data.draft) {

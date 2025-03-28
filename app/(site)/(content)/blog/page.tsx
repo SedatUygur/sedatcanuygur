@@ -1,7 +1,7 @@
-import { BlogCard } from "@/components/BlogCard";
-import { Pagination } from "@/components/Pagination";
-import { TagSelect } from "@/components/TagSelect";
-import { fetchPosts, fetchTags } from "@/lib/FetchPosts";
+import { BlogCard } from '@/components/BlogCard';
+import { Pagination } from '@/components/Pagination';
+import { TagSelect } from '@/components/TagSelect';
+import { fetchPosts, fetchTags } from '@/lib/FetchPosts';
 
 type BlogProps = {
   searchParams: {
@@ -19,7 +19,7 @@ export default async function Blog({ searchParams }: BlogProps) {
   const tags = await fetchTags();
 
   const selectedTags = searchParameters.tags
-    ? searchParameters.tags.split(",")
+    ? searchParameters.tags.split(',')
     : [];
   const filteredPosts = posts.filter((post) =>
     selectedTags.every((tag) => post.tags.includes(tag)),
@@ -28,13 +28,13 @@ export default async function Blog({ searchParams }: BlogProps) {
 
   return (
     <div className="flex flex-col items-center space-y-6">
-      <h1 className="text-primary dark:text-bright font-bold text-3xl">
+      <h1 className="text-primary dark:text-bright text-3xl font-bold">
         Blog Posts
       </h1>
       <div className="w-full">
         <TagSelect tags={tags} />
       </div>
-      <div className="flex flex-col space-y-4 not-prose">
+      <div className="not-prose flex flex-col space-y-4">
         {filteredPosts.slice(start, start + 5).map((post) => (
           <BlogCard key={post.slug} post={post} />
         ))}

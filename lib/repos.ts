@@ -1,5 +1,5 @@
-import octokit from "@/lib/octokit";
-import { NextApiRequest, NextApiResponse } from "next";
+import octokit from '@/lib/octokit';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
@@ -7,7 +7,7 @@ export default async function handler(
 ) {
   try {
     const { data } = await octokit.repos.listForUser({
-      username: "SedatUygur",
+      username: 'SedatUygur',
     });
     res.status(200).json(data);
   } catch (error) {

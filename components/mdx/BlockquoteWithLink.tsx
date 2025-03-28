@@ -1,6 +1,6 @@
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren } from 'react';
 
-import { Blockquote } from "@/components/mdx/Blockquote";
+import { Blockquote } from '@/components/mdx/Blockquote';
 
 type Props = {
   link: string;
@@ -11,7 +11,7 @@ export function BlockquoteWithLink({ link, linkText, children }: Props) {
   return (
     <div className="my-6">
       <Blockquote noMargin>{children}</Blockquote>
-      <div className="flex justify-center -mt-6">
+      <div className="-mt-6 flex justify-center">
         <a href={link}>{linkText || link}</a>
       </div>
     </div>

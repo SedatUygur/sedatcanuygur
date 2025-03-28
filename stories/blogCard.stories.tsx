@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { BlogCard } from "@/components/BlogCard";
+import { BlogCard } from '@/components/BlogCard';
 
 const meta = {
-  title: "BlogCard",
+  title: 'BlogCard',
   component: BlogCard,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof BlogCard>;
 
 export default meta;
@@ -23,12 +23,12 @@ export const Primary: Story = {
   args: {
     post: {
       draft: false,
-      title: "Blog Card Story",
-      slug: "/storybook",
-      date: "01-01-0000",
+      title: 'Blog Card Story',
+      slug: '/storybook',
+      date: '01-01-0000',
       tags: [],
-      description: "A BlogCard component story",
-      content: "",
+      description: 'A BlogCard component story',
+      content: '',
     },
   },
 };
@@ -38,13 +38,13 @@ export const ExternalBlogPost: Story = {
   args: {
     post: {
       draft: false,
-      title: "External Blog Card Story",
-      slug: "/storybook",
-      date: "01-01-0000",
+      title: 'External Blog Card Story',
+      slug: '/storybook',
+      date: '01-01-0000',
       tags: [],
-      description: "An external BlogCard component story",
-      content: "",
-      href: "https://sedatcanuygur.vercel.app/storybook/",
+      description: 'An external BlogCard component story',
+      content: '',
+      href: 'https://sedatcanuygur.vercel.app/storybook/',
     },
   },
 };

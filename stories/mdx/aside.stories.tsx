@@ -1,14 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { Aside } from "@/components/mdx/Aside";
+import { Aside } from '@/components/mdx/Aside';
 
 const meta = {
   component: Aside,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  title: "MDX/Aside",
+  tags: ['autodocs'],
+  title: 'MDX/Aside',
 } satisfies Meta<typeof Aside>;
 
 const Template: StoryFn<typeof Aside> = ({ heading }) => (
@@ -24,6 +24,6 @@ export default meta;
 export const Primary: Story = {
   render: Template,
   args: {
-    heading: "Storybook Aside",
+    heading: 'Storybook Aside',
   },
 };
