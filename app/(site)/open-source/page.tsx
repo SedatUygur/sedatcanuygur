@@ -1,10 +1,10 @@
 import { Pagination } from '@/components/Pagination';
 import octokit from '@/lib/octokit';
 
+type SearchParams = Promise<{ page?: string }>;
+
 type OpenSourceProps = {
-  searchParams: {
-    page?: string;
-  };
+  searchParams: SearchParams;
 };
 
 type Repo = {

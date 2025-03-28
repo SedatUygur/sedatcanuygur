@@ -3,11 +3,10 @@ import { Pagination } from '@/components/Pagination';
 import { TagSelect } from '@/components/TagSelect';
 import { fetchPosts, fetchTags } from '@/lib/FetchPosts';
 
+type SearchParams = Promise<{ page?: string; tags?: string }>;
+
 type BlogProps = {
-  searchParams: {
-    page?: string;
-    tags?: string;
-  };
+  searchParams: SearchParams;
 };
 
 export default async function Blog({ searchParams }: BlogProps) {

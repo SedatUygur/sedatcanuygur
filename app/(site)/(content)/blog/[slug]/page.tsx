@@ -3,8 +3,12 @@ import { notFound } from 'next/navigation';
 
 import { fetchMDXPosts, fetchPost, postComponents } from '@/lib/FetchPosts';
 
+type Params = Promise<{ slug: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
 type BlogPostPageParams = {
-  params: { slug: string };
+  params: Params;
+  searchParams: SearchParams;
 };
 
 /**

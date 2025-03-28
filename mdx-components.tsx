@@ -52,7 +52,7 @@ export const mdxComponents: MDXComponents = {
   img: (props) => (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image
-      placeholder="blur"
+      priority={true}
       sizes="100vw"
       style={{ width: '100%', height: 'auto' }}
       height={450}
