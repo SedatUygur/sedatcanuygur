@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import Link from 'next/link';
 import { ExternalLinkIcon } from 'lucide-react';
 
@@ -27,7 +28,7 @@ export function BlogCard({ post }: BlogCardProps) {
   } else {
     href = `/blog/${post.slug}`;
   }
-
+  const postDate = dayjs(post.date).format('DD MMM YYYY');
   const cardFooter = externalLink ? (
     <CardFooter className="pt-2 pb-6">
       <div className="flex w-full flex-row items-center justify-between">
@@ -35,14 +36,14 @@ export function BlogCard({ post }: BlogCardProps) {
           <p>{host}</p>
           <ExternalLinkIcon className="h-4 w-4" />
         </div>
-        <div className="flex text-xs">{post.date}</div>
+        <div className="flex text-xs">{postDate}</div>
       </div>
     </CardFooter>
   ) : (
     <CardFooter className="pt-2 pb-6">
       <div className="flex w-full flex-col gap-2">
         <div className="flex w-full flex-row items-center justify-end">
-          <div className="flex text-xs">{post.date}</div>
+          <div className="flex text-xs">{postDate}</div>
         </div>
         <div className="flex w-full flex-row items-center justify-end gap-2">
           {post.tags &&
