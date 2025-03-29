@@ -14,7 +14,6 @@ afterAll(() => server.close());
 /*jest.mock("@/lib/SendEmail", () => ({
   sendEmail: jest.fn(),
 }));*/
-jest.mock('@/app/api/db/emails');
 jest.mock('@/lib/SendEmail');
 
 describe('processContactForm', () => {

@@ -1,9 +1,7 @@
-import { insertEmail } from '@/app/api/db/emails';
 import {
   contactSchema,
   ContactSchemaValues,
 } from '@/lib/schemas/ContactFormSchema';
-//import { toaster } from '@/src/components/ui/toaster';
 
 type ProcessContactFormResponse = {
   emailError?: string;
@@ -48,17 +46,6 @@ export async function processContactForm(
   if (parsedFormData.success) {
     const { fullName, emailAddress, message } = parsedFormData.data;
 
-    const databaseResult = await insertEmail({
-      fullName,
-      emailAddress,
-      message,
-    });
-
-    if (databaseResult.errorMessage || databaseResult.columnErrors) {
-      if (databaseResult.columnErrors) {
-        return { formErrors: databaseResult.columnErrors.formFields };
-      }
-    }
     const sendEmailResult = await sendEmail({
       fullName,
       emailAddress,
