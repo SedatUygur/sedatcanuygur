@@ -78,7 +78,6 @@ My blog and CV site built with Next.js, TypeScript, Radix UI and shadcn/ui.
 [![CSS][CSS-logo]][CSS]
 [![PostCSS][PostCSS-logo]][PostCSS]
 [![Tailwind][Tailwind-logo]][Tailwind]
-[![Prettier][Prettier-logo]][Prettier]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
