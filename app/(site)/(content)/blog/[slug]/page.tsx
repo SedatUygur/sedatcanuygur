@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { PostHeader } from '@/components/PostHeader';
 import { fetchMDXPosts, fetchPost, postComponents } from '@/lib/FetchPosts';
+
+import markdownStyles from '@/styles/MarkdownStyles.module.css';
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -81,9 +84,27 @@ export default async function BlogPost({
   const { slug } = await params;
   const components = await postComponents();
 
-  const componentsSlug = components[slug];
+  const currentComponent = components[slug];
 
-  if (!componentsSlug) return notFound();
+  const currentPost = await fetchPost(slug);
 
-  return componentsSlug();
+  if (!currentComponent || !currentPost) return notFound();
+
+  const postElement = currentComponent();
+
+  return (
+    <div className="container mx-auto px-5">
+      <article className="mb-32">
+        <PostHeader
+          title={currentPost.title}
+          coverImage={currentPost.coverImage}
+          date={currentPost.date}
+          author={currentPost.author}
+        />
+        <div className="mx-auto max-w-2xl">
+          <div className={markdownStyles['markdown']}>{postElement}</div>
+        </div>
+      </article>
+    </div>
+  );
 }

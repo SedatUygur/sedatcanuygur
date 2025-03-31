@@ -1,0 +1,27 @@
+.markdown {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  line-height: 1.625;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h2 {
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  font-size: 1.875rem;
+  line-height: 1.375;
+}
+
+.markdown h3 {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.375;
+}
