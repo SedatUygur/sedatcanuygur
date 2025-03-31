@@ -9,7 +9,7 @@ import { ExperienceCard } from '@/components/ExperienceCard';
 export default function CvPage() {
   return (
     <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-4">
-      <section className="mx-auto w-full max-w-2xl space-y-4 bg-white print:space-y-6">
+      <section className="mx-auto w-full max-w-2xl space-y-4 bg-white dark:bg-[#020618] print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">Sedat Can Uygur</h1>
@@ -36,16 +36,22 @@ export default function CvPage() {
           <Link href={'about'}>
             <h2 className="text-xl font-bold hover:underline">About</h2>
           </Link>
-          <p className="text-muted-foreground font-mono text-base text-pretty">
-            Innovative and results-driven Senior Software Engineer with over 8
-            years of experience in full‑stack development, software
-            architecture. Expert at designing and implementing resilient,
-            scalable systems using microservices, cloud technologies and modern
-            DevOps practices. Proven track record in delivering high‑quality
-            solutions for enterprise clients including Vodafone, Under Armour
-            and Sun & Sand Sports and driving technical excellence through best
-            practices in coding, testing and system design.
-          </p>
+          <Card className="bg-white py-4">
+            <CardHeader className="py-0"></CardHeader>
+            <CardContent className="mt-2 py-0 text-xs dark:text-black">
+              <p className="text-muted-foreground font-mono text-base text-pretty">
+                Innovative and results-driven Senior Software Engineer with over
+                8 years of experience in full‑stack development, software
+                architecture. Expert at designing and implementing resilient,
+                scalable systems using microservices, cloud technologies and
+                modern DevOps practices. Proven track record in delivering
+                high‑quality solutions for enterprise clients including
+                Vodafone, Under Armour and Sun & Sand Sports and driving
+                technical excellence through best practices in coding, testing
+                and system design.
+              </p>
+            </CardContent>
+          </Card>
         </section>
         <section className="flex min-h-0 flex-col gap-y-3">
           <h2 className="text-xl font-bold">Skills</h2>
@@ -191,27 +197,27 @@ export default function CvPage() {
               <div className="flex items-start justify-between gap-x-2 text-base">
                 <h3 className="flex flex-col space-y-1 leading-none font-semibold">
                   <a
-                    className="hover:underline"
+                    className="text-blue-600 visited:text-purple-600 hover:text-blue-800 hover:underline"
                     href="https://mu.edu.tr/en"
                     target="_blank"
                   >
                     Muğla Sıtkı Koçman University
                   </a>
                   <a
-                    className="text-sm text-gray-500 hover:underline"
+                    className="text-sm leading-none text-gray-500 hover:underline dark:text-black"
                     href="https://bilgisayar.mu.edu.tr/en"
                     target="_blank"
                   >
                     Department of Computer Engineering
                   </a>
                 </h3>
-                <div className="text-sm text-gray-500 tabular-nums">
+                <div className="text-sm text-gray-500 tabular-nums dark:text-black">
                   09.2010 - 06.2015
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="mt-2 py-0 text-xs">
-              B.S. Computer Engineering
+            <CardContent className="mt-2 py-0 text-sm dark:text-black">
+              B.S. Computer Engineering, GPA: 2.76 / 4
             </CardContent>
           </Card>
         </section>

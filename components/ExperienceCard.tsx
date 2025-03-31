@@ -49,10 +49,14 @@ export function ExperienceCard({
           <div className="text-sm text-gray-500 tabular-nums">{duration}</div>
         </div>
         <div className="flex items-center justify-between gap-x-2 text-base">
-          <h4 className="font-mono text-sm leading-none">{title}</h4>
+          <h4 className="font-mono text-sm leading-none dark:text-black">
+            {title}
+          </h4>
         </div>
       </CardHeader>
-      <CardContent className="mt-2 py-0 text-sm">{description}</CardContent>
+      <CardContent className="mt-2 py-0 text-sm dark:text-black">
+        {description}
+      </CardContent>
       <CardFooter className="mt-2 py-0 print:hidden">
         <div className="flex w-full items-center justify-end"></div>
       </CardFooter>

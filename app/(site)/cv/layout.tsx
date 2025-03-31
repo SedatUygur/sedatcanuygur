@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function CVLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-[#020618]">
       <header className="print:hidden">
         <div className="h-full flex-row px-16 py-2">
           <div className="flex w-full flex-row items-center justify-end px-0">
@@ -45,7 +45,7 @@ export default function CVLayout({ children }: { children: ReactNode }) {
               <PopoverTrigger asChild>
                 <Info className="cursor-pointer" />
               </PopoverTrigger>
-              <PopoverContent className="mr-4 w-80 bg-white">
+              <PopoverContent className="mr-4 w-80 bg-white dark:bg-[#020618]">
                 <p>
                   This is my interactive CV, which encompasses everything
                   related to my education and professional career. There are
