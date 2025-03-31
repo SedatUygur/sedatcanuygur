@@ -267,7 +267,7 @@ const About = () => {
                 with business objectives and provide exceptional{' '}
                 <a href="https://en.wikipedia.org/wiki/User_experience">UX</a>.
               </p>
-              <p>Here are technologies I’ve been working with recently:</p>
+              <p>Here are technologies I’ve been working with:</p>
             </div>
 
             <ul className="skills-list">

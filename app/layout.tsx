@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: 'Senior Software Engineer',
     images: [
       {
-        url: `/api/og??title=${encodeURIComponent("Sedat Can Uygur's personal website")}`,
+        url: `/api/og?title=${encodeURIComponent("Sedat Can Uygur's personal website")}`,
         width: 960,
         height: 540,
         alt: "Sedat Can Uygur's personal website",

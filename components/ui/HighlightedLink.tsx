@@ -16,7 +16,7 @@ export function HighlightedLink({ href, label }: Props) {
   return (
     <Link
       className={clsx(
-        'text-primary hover:text-primary/70 dark:text-bright dark:hover:text-bright/70',
+        'text-primary dark:text-bright hover:text-[#7FFF00] dark:hover:text-[#7FFF00]',
         {
           'text-shine': pathMatch,
           'dark:text-cloud': pathMatch,

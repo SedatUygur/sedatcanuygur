@@ -1,7 +1,5 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
-
 /**
  * Generates an Open Graph image for a blog post.
  *
