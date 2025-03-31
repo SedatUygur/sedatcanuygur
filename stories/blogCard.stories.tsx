@@ -22,13 +22,18 @@ export const Primary: Story = {
   render: Template,
   args: {
     post: {
-      draft: false,
-      title: 'Blog Card Story',
-      slug: '/storybook',
-      date: '01-01-0000',
-      tags: [],
-      description: 'A BlogCard component story',
+      author: {
+        name: 'Sedat Can Uygur',
+        picture: '/images/SedatCanUygur.jpg',
+      },
       content: '',
+      coverImage: '/images/posts/cover.jpg',
+      date: '01-01-0000',
+      description: 'A BlogCard component story',
+      draft: false,
+      slug: '/storybook',
+      tags: [],
+      title: 'Blog Card Story',
     },
   },
 };
@@ -37,14 +42,19 @@ export const ExternalBlogPost: Story = {
   render: Template,
   args: {
     post: {
-      draft: false,
-      title: 'External Blog Card Story',
-      slug: '/storybook',
-      date: '01-01-0000',
-      tags: [],
-      description: 'An external BlogCard component story',
+      author: {
+        name: 'Sedat Can Uygur',
+        picture: '/images/SedatCanUygur.jpg',
+      },
       content: '',
+      coverImage: '/images/posts/cover.jpg',
+      date: '01-01-0000',
+      description: 'An external BlogCard component story',
+      draft: false,
       href: 'https://sedatcanuygur.vercel.app/storybook/',
+      slug: '/storybook',
+      tags: [],
+      title: 'External Blog Card Story',
     },
   },
 };
