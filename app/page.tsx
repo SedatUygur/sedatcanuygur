@@ -6,6 +6,7 @@ import { BlogCardSkeleton } from '@/components/skeletons/BlogCardSkeleton';
 import { Button } from '@/components/ui/Button';
 import { HeroComponent } from '@/components/HeroComponent';
 import { Header } from '@/components/Header';
+import NewsletterForm from '@/components/NewsletterForm';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
@@ -55,6 +56,8 @@ export default async function Home() {
               </div>
             </div>
           </section>
+          <div className="border-t-4 border-gray-200"></div>
+          <NewsletterForm />
         </main>
         <Footer />
       </div>

@@ -1,25 +1,8 @@
 import { sendEmail } from '@/lib/SendEmail';
 import { setupServer } from 'msw/node';
 
-jest.mock('@/app/api/db/emails', () => ({
-  insertEmail: jest.fn(),
-}));
-
 jest.mock('@/lib/SendEmail', () => ({
   sendEmail: jest.fn(),
-}));
-
-jest.mock('@/db', () => ({
-  db: {
-    insert: jest.fn().mockReturnValue({
-      values: jest.fn().mockReturnValue({
-        data: {
-          id: 'testemailsuccess',
-        },
-        error: null,
-      }),
-    }),
-  },
 }));
 
 const server = setupServer();
