@@ -17,6 +17,8 @@ const config: Config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -131,6 +133,14 @@ const config: Config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
+        },
+        slideDown: {
+          from: { height: '0px' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        slideUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0px' },
         },
       },
       scale: {

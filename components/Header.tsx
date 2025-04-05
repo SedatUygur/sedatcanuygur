@@ -14,7 +14,7 @@ import { HighlightedLink } from '@/components/ui/HighlightedLink';
 
 export function Header() {
   return (
-    <header className="border-primary dark:border-bright mb-4 border-b">
+    <header className="border-primary dark:border-bright border-b">
       <div className="hidden h-full flex-row px-4 md:flex md:px-16">
         <div className="flex w-full flex-row items-center justify-between px-0">
           <HighlightedLink label="Home" href="/" />

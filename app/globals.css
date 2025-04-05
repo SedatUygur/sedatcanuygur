@@ -101,6 +101,12 @@
     --popover: 60 54% 97%;
     --popover-foreground: 60 12% 5%;
 
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
     --muted: 60 17% 93%;
     --muted-foreground: 60 13% 40%;
 
@@ -127,6 +133,12 @@
 
     --popover: 180 9% 9%;
     --popover-foreground: 180 14% 90%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 185 18% 14%;
     --muted-foreground: 184 8% 60%;
@@ -193,6 +205,7 @@ html {
 }
 ::-webkit-scrollbar {
   width: 12px;
+  height: 12px;
 }
 ::-webkit-scrollbar-track {
   background: var(--navy);
@@ -201,6 +214,10 @@ html {
   background-color: var(--dark-slate);
   border: 3px solid var(--navy);
   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 :root {

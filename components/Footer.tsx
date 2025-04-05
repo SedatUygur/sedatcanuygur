@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import NewsletterForm from '@/components/NewsletterForm';
 import { GitHubButton } from '@/components/ui/GitHubButton';
 import { LinkedInButton } from '@/components/ui/LinkedInButton';
 import { XButton } from '@/components/ui/XButton';
@@ -9,6 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-white py-10 text-black dark:bg-[#020618] dark:text-[#e2e8f0]">
       {/* Top Line */}
+      <NewsletterForm />
       <div className="border-t-4 border-gray-200"></div>
       {/* Footer Content */}
       <div className="container mx-auto grid grid-cols-1 gap-8 px-5 py-10 md:grid-cols-2">

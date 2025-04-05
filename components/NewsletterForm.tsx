@@ -43,7 +43,7 @@ const NewsletterForm: React.FC = () => {
           ? "The verification was successful and I'm sure this is a great beginning for something special."
           : status == 'error'
             ? 'Unfortunately, your email was not added to the newsletter list due to reason in the warning message.'
-            : 'Join the subscribers list to get the latest news, updates, and special offers delivered directly to your inbox.'}
+            : 'Join the subscribers list to get the latest news and updates delivered directly to your inbox.'}
       </p>
       <form
         onSubmit={handleSubmit}

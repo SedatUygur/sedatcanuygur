@@ -469,7 +469,7 @@ const GlobalStyle = createGlobalStyle`
 
   section {
     margin: 0 auto;
-    padding: 100px 0;
+    // padding: 100px 0;
     max-width: 1000px;
 
     @media (max-width: 768px) {
